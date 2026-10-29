@@ -310,3 +310,14 @@ p b{ font-weight:700 }
   .lamina{ transform:none }
   .hero__scroll{ display:none }
 }
+
+/* ====================== tipografía de titulares: Fraunces Soft ======================
+   Misma voz que los nombres de categoría (Desayunos, Cafés…): peso 700 y tamaño óptico 72. */
+.titular{ font-family:var(--ff-titulo); font-weight:700; text-transform:none; letter-spacing:-.01em; line-height:1.04; font-variation-settings:"SOFT" 100,"opsz" 72 }
+.t-xl{ font-size:clamp(2.5rem,5.6vw,5.4rem) }
+.t-l{  font-size:clamp(2rem,4.2vw,4rem) }
+.t-m{  font-size:clamp(1.5rem,2.6vw,2.3rem) }
+.ceja, .hero__h1 b, .telon__frase{ font-family:var(--ff-detalle); font-style:italic; font-weight:400; font-variation-settings:"SOFT" 100,"opsz" 72 }
+.menu>a{ font-family:var(--ff-titulo); font-weight:700; text-transform:none; letter-spacing:-.01em; font-size:clamp(2.2rem,8.5vw,3.4rem); font-variation-settings:"SOFT" 100,"opsz" 72 }
+.btn, .nav__links a, .h3, .idiomas__btn, .idiomas__lista a b, .idiomas-fila a, .pie h4, .cinta__pista span, .hero__h1, .menu__redes{ font-weight:700 }
+.pal{ padding-bottom:.12em; margin-bottom:-.12em }

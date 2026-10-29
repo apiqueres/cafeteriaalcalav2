@@ -128,3 +128,9 @@ Vídeo del hero: `hero-loop.mp4` (7,4 MB) recomprimido con el ffmpeg de `imageio
 - **Mapa**: ya no es Leaflet. Es una ilustración generada con Higgsfield (GPT Image 2.5) a partir de teselas reales de la zona (`imagenes/mapa-1900.png`, alternativa en `mapa-1900-alt.png`): plano de 1900 en blanco roto y negro con la taza de café en color como marcador. El enlace del mapa abre «cómo llegar» en Google Maps. Coordenadas del local (confirmadas por el cliente sobre el Carrer de Ferrer Cabrera, entre su extremo noreste y la mitad): 39.16475, -0.24512. En la imagen del mapa el local cae en 47,5 % / 71,4 % (`portada.css`). Los enlaces de «cómo llegar» usan la dirección postal, no coordenadas.
 - **Telón**: logo por piezas (`media/logo-partes.svg`, generado desde `logo.svg`): letras una a una, raya, subtítulo y marco con zoom, 2,5 s, sólo la primera vez por sesión.
 - **Hero**: logo liso en SVG como máscara CSS; Three.js queda en `site/lib/three/` sin usar, por si se recupera el 3D (`js/hero-3d.js`).
+
+## 11. Ruta animada del mapa (29-10-2026, noche)
+
+- «Visítanos» muestra un recorte del mapa de 1900 (`site/media/fotos/mapa-ruta.webp`, zona rotonda-Alcalà) con un SVG encima: una taza se vuelca en la rotonda de la Avinguda del País Valencià y el café recorre la avenida diagonal, la CV-503 y Blasco Ibáñez hasta la taza de Alcalà, con una gota en cabeza (CSS `offset-path`). Arranca al asomar la sección y se repite cada 9 s; con «reducir movimiento» se ve la ruta ya pintada.
+- La ruta está trazada a mano sobre las calles tal como las dibujó la IA (coordenadas del `path` en `index.html`, viewBox 1047x723). La ruta real calculada con OSRM (`herramientas` no la guarda; se recalcula con el punto 39.16475, -0.24512) sirvió de guía pero no encaja al píxel con el redibujo.
+- Títulos de sección: Fraunces 700 con tamaño óptico 72, igual que los nombres de categoría. (El bloque se había perdido al retirar el cursor; restaurado.)

@@ -37,3 +37,16 @@
     }, { threshold: .15 }).observe(sec);
   } else vids.forEach(play);
 })();
+
+/* ---------- ruta animada del mapa: arranca al asomar y se repite cada 9 s ---------- */
+(function(){
+  var mapa = document.getElementById('mapa'), cafe = document.getElementById('rutaCafe'); if(!mapa || !cafe) return;
+  try{ var L = Math.ceil(cafe.getTotalLength()); mapa.style.setProperty('--largo', L); }catch(e){}
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ mapa.classList.add('anima'); return; }
+  var timer = null;
+  function arrancar(){ mapa.classList.remove('anima'); void mapa.offsetWidth; mapa.classList.add('anima'); }
+  function bucle(){ arrancar(); timer = setInterval(arrancar, 9000); }
+  function parar(){ clearInterval(timer); timer = null; mapa.classList.remove('anima'); }
+  if('IntersectionObserver' in window) new IntersectionObserver(function(es){ if(es[0].isIntersecting){ if(!timer) bucle(); } else parar(); }, { threshold: .35 }).observe(mapa);
+  else bucle();
+})();

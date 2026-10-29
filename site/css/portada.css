@@ -52,14 +52,11 @@
 .horario{ display:grid; grid-template-columns:1fr auto; gap:.35rem 1.5rem }
 .horario dt{ opacity:.9 } .horario dd{ font-family:var(--ff-ui); font-weight:500; letter-spacing:.04em; white-space:nowrap }
 .visita__acciones{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:.8rem }
-.visita__mapa{ aspect-ratio:4/3; max-height:60vh; width:100%; border-radius:var(--r-logo); overflow:hidden; background:var(--azulejo-2); box-shadow:var(--sombra-carta), inset 0 0 0 1.5px rgba(184,146,79,.45); position:relative }
+.visita__mapa{ aspect-ratio:1047/723; max-height:60vh; width:100%; border-radius:var(--r-logo); overflow:hidden; background:var(--azulejo-2); box-shadow:var(--sombra-carta), inset 0 0 0 1.5px rgba(184,146,79,.45); position:relative }
 .visita__nota{ margin-top:.8rem; font-size:.92rem; opacity:.8 }
 /* mapa clásico (ilustración sobre cartografía real); la mancha de café es el local */
 .mapa{ position:absolute; inset:0; display:block; overflow:hidden; border-radius:inherit }
-.mapa img{ width:100%; height:100%; object-fit:cover; transform-origin:47.5% 71.4%; transition:transform 1.2s var(--lento); filter:none }
-.mapa:hover img{ transform:scale(1.12) }
-.mapa__halo{ position:absolute; left:47.5%; top:71.4%; width:9%; aspect-ratio:1; transform:translate(-50%,-50%); border-radius:50%; box-shadow:0 0 0 2px rgba(107,26,43,.55); animation:halo 2.6s ease-out infinite; pointer-events:none }
-@keyframes halo{ 0%{ transform:translate(-50%,-50%) scale(.6); opacity:.9 } 100%{ transform:translate(-50%,-50%) scale(1.6); opacity:0 } }
+.mapa img{ width:100%; height:100%; object-fit:cover }
 .mapa__nota{ position:absolute; right:.8rem; bottom:.8rem; padding:.35rem .7rem; border-radius:999px; background:rgba(74,15,29,.85); color:var(--hueso); font-family:var(--ff-ui); font-weight:700; text-transform:uppercase; letter-spacing:.1em; font-size:.66rem; opacity:0; transform:translateY(4px); transition:opacity .3s, transform .4s var(--lento) }
 .mapa:hover .mapa__nota, .mapa:focus-visible .mapa__nota{ opacity:1; transform:none }
 @media (hover:none){ .mapa__nota{ opacity:1; transform:none } }
@@ -80,3 +77,23 @@
 .sellos li, .reel__ov, .pin{ font-weight:700 }
 .cat span{ font-family:var(--ff-titulo); font-weight:700; text-transform:none; letter-spacing:0; font-size:clamp(1.15rem,1.6vw,1.5rem); font-variation-settings:"SOFT" 100,"opsz" 72 }
 .horario dd{ font-family:var(--ff-titulo); font-weight:700; letter-spacing:0; font-variation-settings:"SOFT" 100,"opsz" 36 }
+
+/* ---------- ruta animada sobre el mapa: la taza se vuelca y el café circula hasta Alcalà ---------- */
+.ruta{ position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:visible }
+.ruta__sombra{ fill:none; stroke:rgba(74,15,29,.18); stroke-width:16; stroke-linecap:round; stroke-linejoin:round; filter:blur(3px) }
+.ruta__cafe{ fill:none; stroke:#5A2E14; stroke-width:9; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:var(--largo,700); stroke-dashoffset:var(--largo,700) }
+.ruta__gota{ fill:#5A2E14; offset-distance:0%; opacity:0; offset-rotate:0deg }
+.ruta__taza{ transform-box:fill-box; transform-origin:85% 100% }
+.taza__plato{ fill:#F3EEE4; stroke:#2A1C14; stroke-width:1.5 }
+.taza__asa{ fill:none; stroke:var(--burdeos); stroke-width:7; stroke-linecap:round }
+.taza__cuerpo{ fill:var(--burdeos); stroke:#4A0F1D; stroke-width:1.5 }
+.taza__borde{ fill:#8A2438; stroke:var(--oro); stroke-width:3 }
+.taza__cafe{ fill:#4A2612 }
+/* cuando el mapa asoma, .anima arranca la secuencia (~5 s) y se repite */
+.anima .ruta__taza{ animation:tazaVuelca .9s cubic-bezier(.6,0,.4,1) .3s forwards }
+.anima .ruta__cafe{ animation:rutaTraza 3.4s cubic-bezier(.45,.05,.3,1) 1.05s forwards }
+.anima .ruta__gota{ animation:rutaGota 3.4s cubic-bezier(.45,.05,.3,1) 1.05s forwards }
+@keyframes tazaVuelca{ to{ transform:rotate(68deg) } }
+@keyframes rutaTraza{ to{ stroke-dashoffset:0 } }
+@keyframes rutaGota{ 0%{ offset-distance:0%; opacity:0 } 4%{ opacity:1 } 96%{ opacity:1 } 100%{ offset-distance:100%; opacity:0 } }
+@media (prefers-reduced-motion:reduce){ .ruta__cafe{ stroke-dashoffset:0 } .ruta__gota{ display:none } .anima .ruta__taza{ animation:none; transform:rotate(68deg) } }
