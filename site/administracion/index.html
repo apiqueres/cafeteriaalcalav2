@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Administración · Alcalà</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../media/favicon.png" type="image/png">
+<link rel="stylesheet" href="../lib/fonts/fuentes.css">
+<link rel="stylesheet" href="../css/base.css?v=6">
+<link rel="stylesheet" href="../css/admin.css?v=3">
+</head>
+<body class="admin">
+
+<header class="ad-top">
+  <div class="ad-top__marca"><img src="../media/logo-blanco.webp" alt="" width="600" height="600"><span>Alcalà · <b>Administración</b></span></div>
+  <div class="ad-top__user"><a class="btn btn--sin" href="../" target="_blank">Ver la web ↗</a><span>Bruno</span><i>B</i></div>
+</header>
+
+<nav class="ad-nav" aria-label="Secciones del panel">
+  <a href="#inicio"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Inicio</a>
+  <a href="#carta"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>Carta</a>
+  <a href="#categorias"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg>Categorías</a>
+  <a href="#local"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v6"/></svg>Horario y local</a>
+  <a href="#clips"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M10 8l5 4-5 4z"/></svg>Clips de redes</a>
+  <a href="#idiomas"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>Idiomas</a>
+  <span class="sep"></span>
+  <small>Alcalà · panel 1.0 · sin servidor</small>
+</nav>
+
+<main class="ad-main" id="vista"></main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="../js/carta-datos.js?v=1"></script>
+<script src="../js/administracion.js?v=1"></script>
+</body>
+</html>

@@ -53,18 +53,16 @@
 .horario dt{ opacity:.9 } .horario dd{ font-family:var(--ff-ui); font-weight:500; letter-spacing:.04em; white-space:nowrap }
 .visita__acciones{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:.8rem }
 .visita__mapa{ aspect-ratio:4/3; max-height:60vh; width:100%; border-radius:var(--r-logo); overflow:hidden; background:var(--azulejo-2); box-shadow:var(--sombra-carta), inset 0 0 0 1.5px rgba(184,146,79,.45); position:relative }
-.visita__mapa img{ width:100%; height:100%; object-fit:cover }
-.visita__mapa .leaflet-container{ width:100%; height:100%; font-family:var(--ff-cuerpo) }
 .visita__nota{ margin-top:.8rem; font-size:.92rem; opacity:.8 }
-#mapa{ position:absolute; inset:0; background:var(--azulejo-2) }
-.leaflet-container{ font-family:var(--ff-cuerpo) }
-.leaflet-tile-pane{ filter:saturate(.55) sepia(.18) contrast(1.02) }
-.leaflet-control-attribution{ font-size:.65rem; background:rgba(243,238,228,.8) }
-.leaflet-popup-content-wrapper{ border-radius:var(--r-logo-s); background:var(--hueso); color:var(--carbon); font-size:.9rem }
-.leaflet-popup-tip{ background:var(--hueso) }
-.pin{ display:grid; justify-items:center; gap:.15rem; color:var(--burdeos-2); font-family:var(--ff-ui); letter-spacing:.1em; text-transform:uppercase; font-size:.72rem; font-weight:600 }
-.pin i{ display:block; width:34px; height:34px; border-radius:50% 50% 50% 0; transform:rotate(-45deg); background:var(--burdeos); box-shadow:0 0 0 3px var(--oro), 0 14px 24px -8px rgba(0,0,0,.6) }
-.pin span{ background:var(--hueso); padding:.1rem .4rem; border-radius:4px; white-space:nowrap }
+/* mapa clásico (ilustración sobre cartografía real); la mancha de café es el local */
+.mapa{ position:absolute; inset:0; display:block; overflow:hidden; border-radius:inherit }
+.mapa img{ width:100%; height:100%; object-fit:cover; transform-origin:45.6% 73.7%; transition:transform 1.2s var(--lento); filter:none }
+.mapa:hover img{ transform:scale(1.12) }
+.mapa__halo{ position:absolute; left:45.6%; top:73.7%; width:9%; aspect-ratio:1; transform:translate(-50%,-50%); border-radius:50%; box-shadow:0 0 0 2px rgba(107,26,43,.55); animation:halo 2.6s ease-out infinite; pointer-events:none }
+@keyframes halo{ 0%{ transform:translate(-50%,-50%) scale(.6); opacity:.9 } 100%{ transform:translate(-50%,-50%) scale(1.6); opacity:0 } }
+.mapa__nota{ position:absolute; right:.8rem; bottom:.8rem; padding:.35rem .7rem; border-radius:999px; background:rgba(74,15,29,.85); color:var(--hueso); font-family:var(--ff-ui); font-weight:700; text-transform:uppercase; letter-spacing:.1em; font-size:.66rem; opacity:0; transform:translateY(4px); transition:opacity .3s, transform .4s var(--lento) }
+.mapa:hover .mapa__nota, .mapa:focus-visible .mapa__nota{ opacity:1; transform:none }
+@media (hover:none){ .mapa__nota{ opacity:1; transform:none } }
 
 /* ---------- móvil ---------- */
 @media (max-width:899px){

@@ -94,3 +94,31 @@ body.admin{ background:var(--hueso); color:var(--carbon); font-size:.95rem; min-
 .ad-cab h1{ font-family:var(--ff-titulo); font-weight:800; text-transform:none; letter-spacing:-.01em; font-size:2rem; font-variation-settings:"SOFT" 100,"opsz" 144 }
 .fila .nom{ font-family:var(--ff-titulo); font-weight:700; text-transform:none; letter-spacing:0; font-size:1.05rem; font-variation-settings:"SOFT" 100,"opsz" 48 }
 .fila .precio, .kpi b{ font-family:var(--ff-titulo); font-weight:700; font-variation-settings:"SOFT" 100,"opsz" 48 }
+
+/* ---------- panel funcional ---------- */
+.orden{ display:flex; flex-direction:column; gap:2px }
+.orden button{ width:22px; height:14px; font-size:.55rem; line-height:1; color:var(--hueso-3); border-radius:4px }
+.orden button:hover{ color:var(--burdeos); background:var(--hueso-2) }
+.fila{ grid-template-columns:22px 54px minmax(0,1fr) auto auto; cursor:pointer }
+.fila.off{ opacity:.55 }
+.fila .nom .enlinea{ font:inherit; color:inherit; border:0; background:transparent; width:100%; border-bottom:1px dashed transparent }
+.fila .nom .enlinea:focus{ outline:none; border-bottom-color:var(--oro) }
+.cat-tabs span{ cursor:pointer } .cat-tabs span.oculta{ opacity:.5; text-decoration:line-through }
+.buscar-ad input{ font:inherit; font-size:.85rem; padding:.3rem .7rem; border:1.5px solid var(--hueso-3); border-radius:999px; background:#fff; width:150px }
+.campo .op{ opacity:.6; font-weight:400; letter-spacing:0; text-transform:none }
+.idiomas-tabs span{ cursor:pointer } .idiomas-tabs span.mano::after{ content:"✎"; margin-left:.3rem; color:#4F7A3A }
+.etiquetas span{ cursor:pointer }
+.registro{ display:grid; gap:.4rem; font-size:.9rem } .registro li{ display:flex; gap:.8rem; padding:.4rem 0; border-bottom:1px dashed var(--hueso-3) } .registro li span{ color:var(--oro-oscuro); font-family:var(--ff-ui); font-weight:700; font-size:.75rem; white-space:nowrap; padding-top:.15rem }
+.horario-ad{ display:grid; gap:.4rem }
+.dia{ display:grid; grid-template-columns:7rem 5rem auto 5rem 1fr; align-items:center; gap:.5rem; padding:.35rem 0; border-bottom:1px dashed var(--hueso-3) }
+.dia b{ font-family:var(--ff-titulo); font-weight:700 } .dia.off b{ opacity:.5 }
+.dia input[type=text], .dia input:not([type]){ font:inherit; padding:.35rem .5rem; border:1.5px solid var(--hueso-3); border-radius:8px; background:#fff; width:100% }
+.dia input:disabled{ opacity:.4 } .dia label{ font-size:.8rem; justify-self:end; display:flex; gap:.3rem; align-items:center }
+.clips-ad{ display:grid; grid-template-columns:repeat(auto-fill,minmax(110px,1fr)); gap:.8rem }
+.clip{ margin:0; border-radius:12px; overflow:hidden; background:var(--hueso); border:1.5px solid var(--hueso-3) } .clip.off img{ opacity:.4 }
+.clip img{ width:100%; aspect-ratio:9/16; object-fit:cover } .clip figcaption{ display:flex; justify-content:space-between; align-items:center; padding:.4rem .5rem }
+.tabla{ width:100%; border-collapse:collapse; font-size:.9rem } .tabla th{ text-align:left; font-family:var(--ff-ui); font-weight:700; text-transform:uppercase; letter-spacing:.1em; font-size:.7rem; color:var(--burdeos); padding:.5rem .4rem; border-bottom:1.5px solid var(--hueso-3) } .tabla td{ padding:.6rem .4rem; border-bottom:1px dashed var(--hueso-3) } .tabla .btn{ min-height:2rem; padding:.2rem .6rem; font-size:.72rem }
+.toast{ position:fixed; left:50%; bottom:1.4rem; transform:translate(-50%,20px); background:var(--burdeos-2); color:var(--hueso); padding:.7rem 1.2rem; border-radius:999px; font-size:.9rem; opacity:0; transition:opacity .3s, transform .4s var(--lento); pointer-events:none; z-index:50 }
+.toast.on{ opacity:1; transform:translate(-50%,0) }
+.ad-top__user .btn{ color:var(--hueso); font-size:.72rem; min-height:2rem; padding:.2rem .6rem } .ad-top__user .btn::after{ content:none }
+@media (max-width:899px){ .dia{ grid-template-columns:6rem 4.4rem auto 4.4rem 1fr; font-size:.85rem } }

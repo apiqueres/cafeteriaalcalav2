@@ -138,23 +138,25 @@
     document.addEventListener('keydown', function(e){ if(e.key === 'Escape') abrir(false); });
   });
 
-  /* ---------- telón de entrada ---------- */
+  /* ---------- telón de entrada ----------
+     La animación del logo dura ~2,4 s y se enseña entera sólo la primera vez en la sesión;
+     las siguientes veces el telón se abre al momento. */
   var telon = document.getElementById('telon');
   if(telon){
-    var t0 = performance.now(), barra = telon.querySelector('.telon__barra i'), carga = 0, cerrado = false;
-    var sube = setInterval(function(){ carga += (.92 - carga) * .08; if(barra) barra.style.setProperty('--carga', carga); }, 60);
+    var visto = false; try{ visto = sessionStorage.getItem('telon') === '1'; }catch(e){}
+    var t0 = performance.now(), cerrado = false;
     var abrirTelon = function(){
-      if(cerrado) return; cerrado = true; clearInterval(sube); if(barra) barra.style.setProperty('--carga', 1);
-      var espera = Math.max(0, 900 - (performance.now() - t0));
-      setTimeout(function(){ telon.classList.add('fuera'); setTimeout(function(){ telon.classList.add('quitado'); }, 1100); }, espera + 200);
+      if(cerrado) return; cerrado = true;
+      try{ sessionStorage.setItem('telon', '1'); }catch(e){}
+      telon.classList.add('fuera'); setTimeout(function(){ telon.classList.add('quitado'); }, 1100);
     };
-    var cargador = document.getElementById('loader');
-    if(REDUCIR) abrirTelon();
-    else if(cargador){
-      if(cargador.classList.contains('hide')) abrirTelon();
-      else new MutationObserver(function(){ if(cargador.classList.contains('hide')) abrirTelon(); }).observe(cargador, { attributes: true, attributeFilter: ['class'] });
-    } else addEventListener('load', abrirTelon);
-    setTimeout(abrirTelon, 4200);
+    if(REDUCIR || visto){ telon.classList.add('telon--rapido'); setTimeout(abrirTelon, 250); }
+    else {
+      var listo = document.readyState === 'complete';
+      if(!listo) addEventListener('load', function(){ listo = true; });
+      var espera = setInterval(function(){ if(performance.now() - t0 >= 2450 && listo){ clearInterval(espera); abrirTelon(); } }, 50);
+      setTimeout(abrirTelon, 5000);                                     // tope por si la carga se alarga
+    }
   }
 
   /* ---------- cintas: se mueven solas y más deprisa con el scroll ---------- */

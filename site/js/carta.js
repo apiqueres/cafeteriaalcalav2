@@ -1,6 +1,15 @@
 /* Alcalà — carta.js: pinta la carta desde window.CARTA, pestañas pegajosas y buscador */
 (function(){
   var CARTA = window.CARTA || [], ALG = window.ALERGENOS || [], ETQ = window.ETIQUETAS || {};
+  /* si el panel (/administracion) ha guardado datos en este navegador, la carta los usa */
+  try{
+    var D = JSON.parse(localStorage.getItem('alcala.datos') || 'null');
+    if(D && D.categorias){
+      CARTA = D.categorias.filter(function(c){ return c.visible; }).sort(function(a, b){ return a.orden - b.orden; }).map(function(c){
+        return { id: c.id, n: c.n, d: c.d, foto: c.foto, platos: D.platos.filter(function(p){ return p.cat === c.id && p.visible; }).sort(function(a, b){ return a.orden - b.orden; }) };
+      }).filter(function(c){ return c.platos.length; });
+    }
+  }catch(e){}
   var cont = document.getElementById('cartaCont'), tabs = document.getElementById('tabs'), buscar = document.getElementById('buscar');
   if(!cont) return;
   var algNombre = {}; ALG.forEach(function(a){ algNombre[a.id] = a.n; });

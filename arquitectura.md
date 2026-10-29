@@ -29,7 +29,7 @@ Decidido el 29-10-2026 con el brief del cliente. Complementa `estilo-visual.md` 
 - Se genera en el servidor en cada idioma para que Google la indexe, con JSON-LD `Menu`.
 - Botón flotante "Pedir mesa por WhatsApp" y "Llamar".
 
-### Panel `/admin/`
+### Panel `/administracion/`
 - Login con usuario y contraseña (sesión con cookie segura, límite de intentos).
 - **Categorías**: nombre, foto, orden, visible sí/no.
 - **Platos**: nombre, descripción, precio (o varios precios: tapa/ración, copa/botella), categoría, alérgenos (14 casillas), etiquetas, foto, visible sí/no, orden por arrastre.
@@ -47,7 +47,7 @@ Decidido el 29-10-2026 con el brief del cliente. Complementa `estilo-visual.md` 
 Internet → Caddy (HTTPS automático, Brotli, caché de estáticos)
              ├── /            → ficheros estáticos (portada por idioma, css, js, media)
              ├── /carta/*     → Node (render en servidor, caché 60 s)
-             ├── /admin/*     → Node (panel)
+             ├── /administracion/*     → Node (panel)
              └── /api/*       → Node (JSON público de la carta, login, subida de fotos)
 Node 22 + Fastify + SQLite (better-sqlite3) + sharp (fotos a WebP) + DeepL API
 PM2 para mantener el proceso vivo. Copia de seguridad diaria de la base SQLite.
@@ -121,3 +121,10 @@ npx gltf-transform optimize herramientas/logo-raw.glb site/media/3d/logo.glb --c
 Resultado actual: 11.566 vértices, 75 KB. Dependencias de Node (en una carpeta aparte, no en el sitio): `three@0.170.0`, `@xmldom/xmldom`, `@gltf-transform/cli`.
 
 Vídeo del hero: `hero-loop.mp4` (7,4 MB) recomprimido con el ffmpeg de `imageio_ffmpeg` a 1280 px sin audio: `site/media/hero.webm` (357 KB, VP9 crf 34) y `site/media/hero.mp4` (417 KB, H.264 crf 26). Sólo se carga en pantallas de más de 640 px.
+
+## 10. Estado del panel y del mapa (29-10-2026, tarde)
+
+- **Panel** en `site/administracion/` (`js/administracion.js`): funcional sin servidor. Guarda en `localStorage` (clave `alcala.datos`) categorías, platos (con alérgenos, etiquetas, dos precios, visible, orden y traducciones pendientes), horario, contacto y clips. La carta pública (`js/carta.js`) lee esos datos si existen. Sin login todavía. Cuando haya servidor, las mismas acciones pasarán a llamar a la API y el «✦ traducido automáticamente» lo hará DeepL de verdad.
+- **Mapa**: ya no es Leaflet. Es una ilustración generada con Higgsfield (GPT Image 2.5) a partir de teselas reales de la zona (`imagenes/mapa-1900.png`, alternativa en `mapa-1900-alt.png`): plano de 1900 en blanco roto y negro con la taza de café en color como marcador. El enlace del mapa abre «cómo llegar» en Google Maps. La posición del local en la imagen es 45,6 % / 73,7 % (variable en `portada.css`).
+- **Telón**: logo por piezas (`media/logo-partes.svg`, generado desde `logo.svg`): letras una a una, raya, subtítulo y marco con zoom, 2,5 s, sólo la primera vez por sesión.
+- **Hero**: logo liso en SVG como máscara CSS; Three.js queda en `site/lib/three/` sin usar, por si se recupera el 3D (`js/hero-3d.js`).
