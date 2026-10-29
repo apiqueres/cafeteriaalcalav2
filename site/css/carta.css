@@ -11,13 +11,13 @@ body.carta-pag::before{ content:""; position:fixed; inset:0; z-index:-1; backgro
 .carta__cab p.grande{ max-width:52ch; opacity:.9 }
 .carta__cab .titular{ font-size:clamp(2.8rem,7vw,6.4rem) }
 .carta__sellos{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.4rem }
-.carta__sellos span{ font-family:var(--ff-titulo); font-weight:500; text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; padding:.45rem .85rem; border:1.5px solid rgba(184,146,79,.6); border-radius:var(--r-logo-s); color:var(--oro-claro) }
+.carta__sellos span{ font-family:var(--ff-ui); font-weight:500; text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; padding:.45rem .85rem; border:1.5px solid rgba(184,146,79,.6); border-radius:var(--r-logo-s); color:var(--oro-claro) }
 
 /* pestañas de categoría pegajosas */
 .tabs{ position:sticky; top:var(--nav); z-index:50; background:rgba(243,238,228,.94); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1.5px solid var(--hueso-3) }
 .tabs__in{ display:flex; gap:.4rem; overflow-x:auto; scrollbar-width:none; padding-block:.7rem; -webkit-mask:linear-gradient(90deg,#000 92%,transparent); mask:linear-gradient(90deg,#000 92%,transparent) }
 .tabs__in::-webkit-scrollbar{ display:none }
-.tabs__in a{ flex:none; font-family:var(--ff-titulo); font-weight:500; text-transform:uppercase; letter-spacing:.1em; font-size:.82rem; padding:.5rem .95rem; border-radius:var(--r-boton); border:1.5px solid transparent; color:var(--burdeos); transition:background .25s, border-color .25s, color .25s }
+.tabs__in a{ flex:none; font-family:var(--ff-ui); font-weight:500; text-transform:uppercase; letter-spacing:.1em; font-size:.82rem; padding:.5rem .95rem; border-radius:var(--r-boton); border:1.5px solid transparent; color:var(--burdeos); transition:background .25s, border-color .25s, color .25s }
 .tabs__in a:hover{ border-color:var(--oro) }
 .tabs__in a[aria-current]{ background:var(--burdeos); color:var(--hueso) }
 .buscar{ display:flex; align-items:center; gap:.5rem; margin-left:auto; flex:none; border:1.5px solid var(--hueso-3); border-radius:var(--r-boton); padding:.35rem .9rem; background:var(--blanco, #FBFCF7); min-width:200px }
@@ -34,12 +34,12 @@ body.carta-pag::before{ content:""; position:fixed; inset:0; z-index:-1; backgro
 .cat-sec__foto img{ width:100%; height:100%; object-fit:cover }
 .platos{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.9rem 2.2rem }
 .plato{ display:grid; grid-template-columns:minmax(0,1fr) auto; gap:.3rem 1rem; padding:1rem 0; border-bottom:1px dashed var(--hueso-3); align-content:start }
-.plato__nom{ font-family:var(--ff-titulo); font-weight:500; text-transform:uppercase; letter-spacing:.04em; font-size:1.1rem; color:var(--burdeos-2); display:flex; flex-wrap:wrap; align-items:center; gap:.4rem .6rem }
-.plato__precio{ font-family:var(--ff-titulo); font-weight:600; font-size:1.15rem; color:var(--oro-oscuro); white-space:nowrap; text-align:right }
+.plato__nom{ font-family:var(--ff-ui); font-weight:500; text-transform:uppercase; letter-spacing:.04em; font-size:1.1rem; color:var(--burdeos-2); display:flex; flex-wrap:wrap; align-items:center; gap:.4rem .6rem }
+.plato__precio{ font-family:var(--ff-ui); font-weight:600; font-size:1.15rem; color:var(--oro-oscuro); white-space:nowrap; text-align:right }
 .plato__precio small{ display:block; font-weight:400; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; opacity:.75 }
 .plato__desc{ grid-column:1; font-size:.95rem; line-height:1.5; opacity:.85 }
 .plato__pie{ grid-column:1 / -1; display:flex; flex-wrap:wrap; align-items:center; gap:.4rem; margin-top:.2rem }
-.tag{ font-family:var(--ff-titulo); font-weight:500; text-transform:uppercase; letter-spacing:.1em; font-size:.66rem; padding:.2rem .5rem; border-radius:4px; border:1px solid currentColor }
+.tag{ font-family:var(--ff-ui); font-weight:500; text-transform:uppercase; letter-spacing:.1em; font-size:.66rem; padding:.2rem .5rem; border-radius:4px; border:1px solid currentColor }
 .tag--nuevo{ color:var(--terracota) }
 .tag--reco{ color:var(--oro-oscuro) }
 .tag--vegano{ color:#4F7A3A }
@@ -64,3 +64,10 @@ body.carta-pag::before{ content:""; position:fixed; inset:0; z-index:-1; backgro
   .cat-sec__foto{ display:none }
   .buscar{ display:none }
 }
+
+/* ---------- Fraunces en platos y precios; UI en pestañas y etiquetas ---------- */
+.carta__sellos span, .tabs__in a, .tag{ font-weight:700 }
+.carta__cab .titular{ font-size:clamp(2.8rem,6.5vw,6rem) }
+.plato__nom{ font-family:var(--ff-titulo); font-weight:700; text-transform:none; letter-spacing:0; font-size:1.22rem; line-height:1.15; font-variation-settings:"SOFT" 100,"opsz" 48 }
+.plato__precio{ font-family:var(--ff-titulo); font-weight:700; font-size:1.18rem; font-variation-settings:"SOFT" 100,"opsz" 48 }
+.plato__precio small{ font-family:var(--ff-ui); font-weight:700 }

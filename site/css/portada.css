@@ -6,7 +6,7 @@
 .presenta__txt .ceja{ margin-bottom:-.4rem }
 .presenta__foto{ aspect-ratio:4/3; max-height:62vh; justify-self:end; width:100% }
 .sellos{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:.8rem }
-.sellos li{ font-family:var(--ff-titulo); font-weight:500; text-transform:uppercase; letter-spacing:.12em; font-size:.8rem; padding:.5rem .9rem; border:1.5px solid rgba(184,146,79,.55); border-radius:var(--r-logo-s); color:var(--oro-claro) }
+.sellos li{ font-family:var(--ff-ui); font-weight:500; text-transform:uppercase; letter-spacing:.12em; font-size:.8rem; padding:.5rem .9rem; border:1.5px solid rgba(184,146,79,.55); border-radius:var(--r-logo-s); color:var(--oro-claro) }
 
 /* ---------- carta destacada ---------- */
 .cartaDest .lamina__in>.titular{ display:flex; align-items:flex-end; justify-content:space-between; gap:1rem; flex-wrap:wrap }
@@ -16,7 +16,7 @@
 .cat{ position:relative; display:block; aspect-ratio:4/3; overflow:hidden; border-radius:var(--r-logo); background:var(--azulejo); box-shadow:var(--sombra-carta); transition:transform .5s var(--lento) }
 .cat img{ width:100%; height:100%; object-fit:cover; transition:transform .8s var(--lento) }
 .cat::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 40%, rgba(74,15,29,.85)); transition:opacity .4s }
-.cat span{ position:absolute; z-index:1; left:1rem; right:1rem; bottom:.9rem; font-family:var(--ff-titulo); font-weight:500; text-transform:uppercase; letter-spacing:.1em; font-size:clamp(.95rem,1.3vw,1.2rem); display:flex; justify-content:space-between; align-items:center }
+.cat span{ position:absolute; z-index:1; left:1rem; right:1rem; bottom:.9rem; font-family:var(--ff-ui); font-weight:500; text-transform:uppercase; letter-spacing:.1em; font-size:clamp(.95rem,1.3vw,1.2rem); display:flex; justify-content:space-between; align-items:center }
 .cat span::after{ content:"→"; font-family:var(--ff-cuerpo); color:var(--oro-claro); transform:translateX(-6px); opacity:0; transition:transform .4s var(--lento), opacity .3s }
 .cat:hover{ transform:translateY(-4px) }
 .cat:hover img{ transform:scale(1.06) }
@@ -37,7 +37,7 @@
 .reel{ position:relative; flex:none; height:100%; aspect-ratio:9/16; margin-right:clamp(10px,1.2vw,18px); border-radius:var(--r-logo); overflow:hidden; background:var(--burdeos-2); display:block; transition:transform .5s var(--lento) }
 .reel:hover{ transform:translateY(-6px) }
 .reel video, .reel img{ width:100%; height:100%; object-fit:cover }
-.reel__ov{ position:absolute; inset:auto 0 0 0; padding:1rem; background:linear-gradient(transparent, rgba(74,15,29,.9)); color:var(--hueso); display:flex; justify-content:space-between; align-items:center; font-family:var(--ff-titulo); text-transform:uppercase; letter-spacing:.1em; font-size:.82rem; opacity:0; transform:translateY(8px); transition:opacity .3s, transform .4s var(--lento) }
+.reel__ov{ position:absolute; inset:auto 0 0 0; padding:1rem; background:linear-gradient(transparent, rgba(74,15,29,.9)); color:var(--hueso); display:flex; justify-content:space-between; align-items:center; font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:.1em; font-size:.82rem; opacity:0; transform:translateY(8px); transition:opacity .3s, transform .4s var(--lento) }
 .reel:hover .reel__ov{ opacity:1; transform:none }
 .reel__ig{ position:absolute; top:.8rem; right:.8rem; width:30px; height:30px; display:grid; place-items:center; border-radius:50%; background:rgba(74,15,29,.6); backdrop-filter:blur(4px); color:var(--hueso) }
 .reel__ig svg{ width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.8 }
@@ -50,7 +50,7 @@
 .visita__datos{ display:grid; gap:clamp(1.3rem,2.4vw,2rem) }
 .visita__datos .h3{ color:var(--oro) }
 .horario{ display:grid; grid-template-columns:1fr auto; gap:.35rem 1.5rem }
-.horario dt{ opacity:.9 } .horario dd{ font-family:var(--ff-titulo); font-weight:500; letter-spacing:.04em; white-space:nowrap }
+.horario dt{ opacity:.9 } .horario dd{ font-family:var(--ff-ui); font-weight:500; letter-spacing:.04em; white-space:nowrap }
 .visita__acciones{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:.8rem }
 .visita__mapa{ aspect-ratio:4/3; max-height:60vh; width:100%; border-radius:var(--r-logo); overflow:hidden; background:var(--azulejo-2); box-shadow:var(--sombra-carta), inset 0 0 0 1.5px rgba(184,146,79,.45); position:relative }
 .visita__mapa img{ width:100%; height:100%; object-fit:cover }
@@ -62,7 +62,7 @@
 .leaflet-control-attribution{ font-size:.65rem; background:rgba(243,238,228,.8) }
 .leaflet-popup-content-wrapper{ border-radius:var(--r-logo-s); background:var(--hueso); color:var(--carbon); font-size:.9rem }
 .leaflet-popup-tip{ background:var(--hueso) }
-.pin{ display:grid; justify-items:center; gap:.15rem; color:var(--burdeos-2); font-family:var(--ff-titulo); letter-spacing:.1em; text-transform:uppercase; font-size:.72rem; font-weight:600 }
+.pin{ display:grid; justify-items:center; gap:.15rem; color:var(--burdeos-2); font-family:var(--ff-ui); letter-spacing:.1em; text-transform:uppercase; font-size:.72rem; font-weight:600 }
 .pin i{ display:block; width:34px; height:34px; border-radius:50% 50% 50% 0; transform:rotate(-45deg); background:var(--burdeos); box-shadow:0 0 0 3px var(--oro), 0 14px 24px -8px rgba(0,0,0,.6) }
 .pin span{ background:var(--hueso); padding:.1rem .4rem; border-radius:4px; white-space:nowrap }
 
@@ -77,3 +77,8 @@
   .categorias{ gap:.6rem }
   .cat span{ font-size:.85rem; left:.8rem; right:.8rem; bottom:.7rem }
 }
+
+/* ---------- Fraunces en nombres de categoría y horas; UI en etiquetas ---------- */
+.sellos li, .reel__ov, .pin{ font-weight:700 }
+.cat span{ font-family:var(--ff-titulo); font-weight:700; text-transform:none; letter-spacing:0; font-size:clamp(1.15rem,1.6vw,1.5rem); font-variation-settings:"SOFT" 100,"opsz" 72 }
+.horario dd{ font-family:var(--ff-titulo); font-weight:700; letter-spacing:0; font-variation-settings:"SOFT" 100,"opsz" 36 }

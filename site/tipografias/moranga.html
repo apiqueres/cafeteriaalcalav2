@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alternativas libres a Moranga · Alcalà</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../lib/fonts/fuentes.css">
+<link rel="stylesheet" href="fuentes/fuentes.css">
+<link rel="stylesheet" href="fuentes/moranga.css">
+<style>
+  :root{ --burdeos:#6B1A2B; --burdeos-2:#4A0F1D; --hueso:#F3EEE4; --hueso-2:#E8E1D3; --oro:#B8924F; --oro-claro:#D9BC7E; --oro-oscuro:#8E6D37; --carbon:#1C1818 }
+  *{ box-sizing:border-box }
+  body{ margin:0; background:var(--hueso-2); color:var(--carbon); font-family:"Nunito",system-ui,sans-serif; padding:2rem 1.2rem 4rem }
+  h1{ font:600 1.1rem/1.2 system-ui; text-transform:uppercase; letter-spacing:.14em; color:var(--burdeos); margin:0 0 .4rem }
+  .intro{ max-width:75ch; opacity:.75; font-size:.92rem; margin:0 0 1.6rem; font-family:system-ui }
+  .rejilla{ display:grid; grid-template-columns:repeat(auto-fit,minmax(380px,1fr)); gap:1.4rem; max-width:1500px; margin:0 auto }
+  .op{ border-radius:28px 0 28px 0; overflow:hidden; box-shadow:0 18px 50px -24px rgba(28,24,24,.5); background:var(--hueso); display:grid; grid-template-rows:auto 1fr auto }
+  .op__cab{ display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.7rem 1.1rem; background:var(--hueso-2); font:600 .78rem/1.3 system-ui; letter-spacing:.1em; text-transform:uppercase; color:var(--burdeos) }
+  .op__cab small{ font-weight:400; text-transform:none; letter-spacing:0; opacity:.7 }
+  .hero{ background:var(--burdeos); color:var(--hueso); padding:1.8rem 1.5rem 1.6rem; position:relative; display:grid; gap:.5rem }
+  .hero::after{ content:""; position:absolute; inset:0 0 auto 0; height:45%; background:linear-gradient(180deg, rgba(184,146,79,.16), transparent); pointer-events:none }
+  .hero .logo{ width:64px; aspect-ratio:1; background:var(--oro); -webkit-mask:url(../media/logo.svg) center/contain no-repeat; mask:url(../media/logo.svg) center/contain no-repeat; margin-bottom:.3rem }
+  .ceja{ color:var(--oro-claro); font-size:1rem; letter-spacing:.14em; text-transform:uppercase; font-family:system-ui; font-size:.76rem }
+  .tit{ font-size:2.5rem; line-height:1.05; margin:0; letter-spacing:-.005em }
+  .alfabeto{ font-size:1.35rem; line-height:1.2; color:var(--oro-claro); margin:.3rem 0 0; word-break:break-all; opacity:.95 }
+  .p{ font-size:.98rem; line-height:1.55; margin:.2rem 0 0; opacity:.92; max-width:42ch }
+  .carta{ padding:1.2rem 1.5rem 1.3rem; display:grid; gap:.3rem }
+  .carta h3{ margin:0 0 .4rem; font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:var(--oro-oscuro); font-family:system-ui }
+  .plato{ display:grid; grid-template-columns:1fr auto; gap:.2rem .8rem; padding:.5rem 0; border-bottom:1px dashed var(--hueso-2) }
+  .plato b{ font-size:1.2rem; color:var(--burdeos-2); font-weight:700; line-height:1.15 }
+  .plato i{ grid-column:1; font-style:normal; font-size:.92rem; opacity:.85; line-height:1.45 }
+  .plato span{ font-size:1.1rem; color:var(--oro-oscuro); font-weight:800 }
+  .nota{ padding:.8rem 1.5rem 1.2rem; font:.82rem/1.5 system-ui; opacity:.75; border-top:1px solid var(--hueso-2) }
+  .nota b{ color:var(--burdeos) }
+</style>
+</head>
+<body>
+<h1>Alternativas libres a Moranga</h1>
+<p class="intro">Moranga (Latinotype, de pago) es una serif gordita, redondeada y con aire de los años 70. Estas son las candidatas gratuitas más cercanas, todas con licencia de uso comercial, sobre la misma portada y línea de carta. El cuerpo de texto es Nunito en todas para comparar sólo el titular.</p>
+<div class="rejilla" id="rejilla"></div>
+<script>
+var OPS = [
+  { k:'1', n:'Fraunces Soft', f:'Google Fonts · OFL · variable', css:'font-family:"Fraunces";font-weight:800;font-variation-settings:"SOFT" 100,"opsz" 144', nota:'<b>La más parecida a Moranga.</b> Con el eje SOFT al máximo las esquinas se redondean y el peso 800-900 le da la gordura. Tiene itálica, cirílico no (sí latín extendido y vietnamita).' },
+  { k:'2', n:'Young Serif', f:'Google Fonts · OFL', css:'font-family:"Young Serif";font-weight:400', nota:'Serif blanda de un solo peso, cálida y con mucho carácter. Muy «panadería de barrio». Sólo latín.' },
+  { k:'3', n:'Erode', f:'Fontshare (ITF) · uso comercial', css:'font-family:"Erode";font-weight:700', nota:'Serif contemporánea con las curvas suaves y las gotas marcadas, cercana a Recoleta y Moranga. Tiene 6 pesos e itálicas. Sólo latín.' },
+  { k:'4', n:'Melodrama', f:'Fontshare (ITF) · uso comercial', css:'font-family:"Melodrama";font-weight:700', nota:'Display de contraste alto y remates redondos, con sabor retro. Para titulares grandes; en la carta pierde un poco.' },
+  { k:'5', n:'Gambetta', f:'Fontshare (ITF) · uso comercial', css:'font-family:"Gambetta";font-weight:700', nota:'Serif de texto con gotas redondas; aguanta bien en tamaños pequeños, así que sirve para la carta entera.' },
+  { k:'6', n:'Sentient', f:'Fontshare (ITF) · uso comercial', css:'font-family:"Sentient";font-weight:700', nota:'Suave y humanista, menos retro que Moranga pero muy elegante con el burdeos y el oro.' },
+  { k:'7', n:'Boska', f:'Fontshare (ITF) · uso comercial', css:'font-family:"Boska";font-weight:700', nota:'Serif de revista, contraste alto y curvas sensuales. Más «lujo» que «cafetería»; interesante si se quiere elevar la marca.' },
+  { k:'8', n:'Chonburi', f:'Google Fonts · OFL', css:'font-family:"Chonburi";font-weight:400', nota:'Didona gordita tipo Cooper Black con remates redondos; muy años 70. Un solo peso, latín y tailandés.' },
+  { k:'9', n:'Bagel Fat One', f:'Google Fonts · OFL', css:'font-family:"Bagel Fat One";font-weight:400', nota:'La más bubbly: trazos muy gordos y redondos. Divertida para cafetería joven; demasiado blanda para la carta, sólo titulares.' },
+  { k:'10', n:'DM Serif Display', f:'Google Fonts · OFL', css:'font-family:"DM Serif Display";font-weight:400', nota:'Didona de pantalla clásica y limpia, con itálica preciosa para cejas. Menos redonda que Moranga pero muy legible.' }
+];
+var sel = new URLSearchParams(location.search).get('op');
+if(sel) OPS = OPS.filter(function(o){ return o.k === sel; });
+var estilos = document.createElement('style');
+estilos.textContent = OPS.map(function(o){ return '.op-' + o.k + ' .tit, .op-' + o.k + ' .alfabeto, .op-' + o.k + ' .plato b{' + o.css + '}'; }).join(' ');
+document.head.appendChild(estilos);
+document.getElementById('rejilla').innerHTML = OPS.map(function(o){ return '<section class="op op-' + o.k + '">'
+  + '<div class="op__cab"><span>' + o.k + ' · ' + o.n + '</span><small>' + o.f + '</small></div>'
+  + '<div class="hero"><div class="logo"></div><div class="ceja">Cafetería · Baristas · Cullera</div><h2 class="tit">Desde 1987, el punto de encuentro.</h2>'
+  + '<p class="alfabeto">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ áéíóú 0123456789 &amp;</p>'
+  + '<p class="p">Café de verdad, cocina que no para y una terraza para quedarse.</p></div>'
+  + '<div class="carta"><h3>Desayunos</h3>'
+  + '<div class="plato"><b>Almuerzo valenciano</b><span>9,00 €</span><i>Bocadillo con 2 variantes, 1 bebida y café. Con cacahuetes y aceitunas.</i></div>'
+  + '<div class="plato"><b>Huevos Benedict</b><span>7,70 €</span><i>Huevos pochados con jamón serrano y salsa holandesa sobre pan tierno.</i></div></div>'
+  + '<div class="nota">' + o.nota + '</div></section>'; }).join('');
+</script>
+</body>
+</html>

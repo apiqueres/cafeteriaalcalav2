@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tipografías · Alcalà</title>
+<meta name="robots" content="noindex">
+<!-- muestras: las fuentes se cargan de Google Fonts sólo para comparar; la elegida se autoalojará -->
+
+<link rel="stylesheet" href="../lib/fonts/fuentes.css">
+<link rel="stylesheet" href="fuentes/fuentes.css">
+<style>
+  :root{ --burdeos:#6B1A2B; --burdeos-2:#4A0F1D; --hueso:#F3EEE4; --hueso-2:#E8E1D3; --oro:#B8924F; --oro-claro:#D9BC7E; --oro-oscuro:#8E6D37; --carbon:#1C1818; --azulejo-2:#3E5663 }
+  *{ box-sizing:border-box }
+  body{ margin:0; background:var(--hueso-2); color:var(--carbon); font-family:system-ui,sans-serif; padding:2rem 1.2rem 4rem }
+  h1{ font:600 1.1rem/1.2 system-ui; text-transform:uppercase; letter-spacing:.14em; color:var(--burdeos); margin:0 0 .4rem }
+  .intro{ max-width:70ch; opacity:.75; font-size:.92rem; margin:0 0 1.6rem }
+  .rejilla{ display:grid; grid-template-columns:repeat(auto-fit,minmax(380px,1fr)); gap:1.4rem; max-width:1500px; margin:0 auto }
+  .op{ border-radius:28px 0 28px 0; overflow:hidden; box-shadow:0 18px 50px -24px rgba(28,24,24,.5); background:var(--hueso); display:grid; grid-template-rows:auto 1fr auto }
+  .op__cab{ display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.7rem 1.1rem; background:var(--hueso-2); font:600 .78rem/1.3 system-ui; letter-spacing:.1em; text-transform:uppercase; color:var(--burdeos) }
+  .op__cab small{ font-weight:400; text-transform:none; letter-spacing:0; opacity:.7 }
+  .hero{ background:var(--burdeos); color:var(--hueso); padding:2rem 1.5rem 1.8rem; position:relative; display:grid; gap:.6rem }
+  .hero::after{ content:""; position:absolute; inset:0 0 auto 0; height:45%; background:linear-gradient(180deg, rgba(184,146,79,.16), transparent); pointer-events:none }
+  .hero .logo{ width:72px; aspect-ratio:1; background:var(--oro); -webkit-mask:url(../media/logo.svg) center/contain no-repeat; mask:url(../media/logo.svg) center/contain no-repeat; margin-bottom:.4rem }
+  .ceja{ color:var(--oro-claro); font-size:1.25rem; line-height:1.2 }
+  .tit{ font-size:2.6rem; line-height:1; margin:0; text-transform:uppercase; letter-spacing:.01em }
+  .p{ font-size:1rem; line-height:1.55; margin:.2rem 0 0; opacity:.92; max-width:40ch }
+  .btn{ justify-self:start; margin-top:.4rem; padding:.55rem 1.2rem; border:1.5px solid var(--oro); border-radius:999px; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--hueso) }
+  .carta{ padding:1.3rem 1.5rem 1.5rem; display:grid; gap:.3rem }
+  .carta h3{ margin:0 0 .4rem; font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:var(--oro-oscuro); font-family:system-ui }
+  .plato{ display:grid; grid-template-columns:1fr auto; gap:.2rem .8rem; padding:.55rem 0; border-bottom:1px dashed var(--hueso-2) }
+  .plato b{ font-size:1.15rem; text-transform:uppercase; letter-spacing:.03em; color:var(--burdeos-2); font-weight:600 }
+  .plato i{ grid-column:1; font-style:normal; font-size:.92rem; opacity:.85; line-height:1.45 }
+  .plato span{ font-size:1.1rem; color:var(--oro-oscuro); font-weight:700 }
+  .nota{ padding:.8rem 1.5rem 1.2rem; font:.82rem/1.5 system-ui; opacity:.75; border-top:1px solid var(--hueso-2) }
+  /* ===== opciones ===== */
+  .A .tit, .A .plato b{ font-family:"Bebas Neue"; font-weight:400; letter-spacing:.04em } .A .p, .A .plato i, .A .btn{ font-family:"Nunito" } .A .ceja{ font-family:"Caveat"; font-weight:700; font-size:1.6rem }
+  .B .tit, .B .plato b{ font-family:"Alfa Slab One"; font-weight:400; letter-spacing:.01em; font-size:2.1rem } .B .plato b{ font-size:1.05rem } .B .p, .B .plato i, .B .btn{ font-family:"Work Sans" } .B .ceja{ font-family:"Work Sans"; text-transform:uppercase; letter-spacing:.18em; font-size:.8rem }
+  .C .tit, .C .plato b{ font-family:"Fraunces"; font-variation-settings:"SOFT" 100; font-weight:700; text-transform:none; letter-spacing:-.01em } .C .p, .C .plato i, .C .btn{ font-family:"DM Sans" } .C .ceja{ font-family:"Fraunces"; font-style:italic; font-weight:400; font-size:1.35rem }
+  .D .tit, .D .plato b{ font-family:"Playfair Display"; font-weight:700; text-transform:none; letter-spacing:0 } .D .p, .D .plato i, .D .btn{ font-family:"Lato" } .D .ceja{ font-family:"Dancing Script"; font-weight:600; font-size:1.6rem }
+  .E .tit, .E .plato b{ font-family:"Oswald"; font-weight:600 } .E .p, .E .plato i, .E .btn{ font-family:"Manrope" } .E .ceja{ font-family:"Instrument Serif"; font-style:italic; font-size:1.4rem }
+  .F .tit, .F .plato b{ font-family:"Barlow Condensed"; font-weight:700; letter-spacing:.02em } .F .p, .F .plato i, .F .btn{ font-family:"Barlow" } .F .ceja{ font-family:"Kaushan Script"; font-size:1.5rem }
+  .G .tit, .G .plato b{ font-family:"Josefin Sans"; font-weight:700; letter-spacing:.06em } .G .p, .G .plato i, .G .btn{ font-family:"Josefin Sans"; font-weight:400 } .G .ceja{ font-family:"Lobster"; font-size:1.5rem }
+  .H .tit, .H .plato b{ font-family:"Cormorant Garamond"; font-weight:700; text-transform:uppercase; letter-spacing:.08em } .H .p, .H .plato i, .H .btn{ font-family:"Lato" } .H .ceja{ font-family:"Cormorant Garamond"; font-style:italic; font-weight:500; font-size:1.45rem }
+</style>
+</head>
+<body>
+<h1>Tipografías para Alcalà</h1>
+<p class="intro">Ocho combinaciones (titular + texto + detalle) sobre la misma portada y la misma línea de carta. El logo lleva una condensada mayúscula; las opciones A, E y F la continúan, las demás contrastan con ella.</p>
+<div class="rejilla" id="rejilla"></div>
+<script>
+var OPS = [
+  { k:'A', n:'Pizarra de cafetería', f:'Bebas Neue · Nunito · Caveat', nota:'La más cercana al logo (condensada). Caveat aporta el trazo a mano de las pizarras de desayunos. Muy legible en carta.' },
+  { k:'B', n:'Rótulo clásico', f:'Alfa Slab One · Work Sans', nota:'Slab serif de cartel antiguo, como los rótulos de cafetería de toda la vida. Fuerte y cálida; mejor usar poco el titular.' },
+  { k:'C', n:'Café de especialidad', f:'Fraunces · DM Sans', nota:'Serif blanda, muy usada por tostadores y cafés de especialidad. Elegante y moderna; va bien con el oro viejo.' },
+  { k:'D', n:'Clásica elegante', f:'Playfair Display · Lato · Dancing Script', nota:'La elegancia del burdeos y el dorado. Dancing Script da el toque de cafetería tradicional. Riesgo: se ve en muchas webs de restaurantes.' },
+  { k:'E', n:'Actual (la de la demo)', f:'Oswald · Manrope · Instrument Serif', nota:'Condensada como el logo, cuerpo limpio y serif itálica en cejas. Sobria; menos «cafetería», más «marca».' },
+  { k:'F', n:'Moderna cercana', f:'Barlow Condensed · Barlow · Kaushan Script', nota:'Una familia entera (Barlow) para todo, más un script con pincel para las cejas. Muy coherente y fácil de mantener.' },
+  { k:'G', n:'Art déco', f:'Josefin Sans · Lobster', nota:'Geométrica años 30, recuerda a cafés de siempre y al «Edificio Madrid». Lobster es reconocible al instante como cafetería, aunque muy vista.' },
+  { k:'H', n:'Garamond de carta', f:'Cormorant Garamond · Lato', nota:'La más «carta de restaurante»: serif fina en mayúsculas con tracking. Elegantísima en hueso y oro; en pantallas pequeñas pide tamaños generosos.' }
+];
+var sel = new URLSearchParams(location.search).get('op');
+if(sel) OPS = OPS.filter(function(o){ return o.k === sel.toUpperCase(); });
+document.getElementById('rejilla').innerHTML = OPS.map(function(o){ return '<section class="op ' + o.k + '">'
+  + '<div class="op__cab"><span>' + o.k + ' · ' + o.n + '</span><small>' + o.f + '</small></div>'
+  + '<div class="hero"><div class="logo"></div><div class="ceja">Cafetería · Baristas, en Cullera</div><h2 class="tit">Desde 1987, el punto de encuentro.</h2>'
+  + '<p class="p">Café de verdad, cocina que no para y una terraza para quedarse. Desayuna a la hora de cenar o cena a la hora de desayunar.</p><span class="btn">Ver la carta →</span></div>'
+  + '<div class="carta"><h3>Desayunos</h3>'
+  + '<div class="plato"><b>Almuerzo valenciano</b><span>9,00 €</span><i>Bocadillo con 2 variantes, 1 bebida y café. Con cacahuetes y aceitunas.</i></div>'
+  + '<div class="plato"><b>Huevos Benedict</b><span>7,70 €</span><i>Huevos pochados con jamón serrano y salsa holandesa sobre pan tierno.</i></div></div>'
+  + '<div class="nota">' + o.nota + '</div></section>'; }).join('');
+</script>
+</body>
+</html>

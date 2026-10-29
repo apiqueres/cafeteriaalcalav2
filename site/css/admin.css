@@ -1,13 +1,13 @@
 /* Alcalà — admin.css: panel de administración (maqueta visual) */
 body.admin{ background:var(--hueso); color:var(--carbon); font-size:.95rem; min-height:100svh; display:grid; grid-template-columns:240px 1fr; grid-template-rows:auto 1fr }
 .ad-top{ grid-column:1 / -1; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.7rem var(--lado); background:var(--burdeos-2); color:var(--hueso); position:sticky; top:0; z-index:20 }
-.ad-top__marca{ display:flex; align-items:center; gap:.7rem; font-family:var(--ff-titulo); text-transform:uppercase; letter-spacing:.12em; font-size:.85rem }
+.ad-top__marca{ display:flex; align-items:center; gap:.7rem; font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:.12em; font-size:.85rem }
 .ad-top__marca img{ width:34px; height:34px }
 .ad-top__marca b{ color:var(--oro-claro); font-weight:500 }
 .ad-top__user{ display:flex; align-items:center; gap:.8rem; font-size:.85rem; opacity:.9 }
-.ad-top__user i{ width:30px; height:30px; border-radius:50%; background:var(--oro); color:var(--burdeos-2); display:grid; place-items:center; font-family:var(--ff-titulo); font-style:normal }
+.ad-top__user i{ width:30px; height:30px; border-radius:50%; background:var(--oro); color:var(--burdeos-2); display:grid; place-items:center; font-family:var(--ff-ui); font-style:normal }
 .ad-nav{ background:var(--burdeos); color:var(--hueso); padding:1.2rem .8rem; display:flex; flex-direction:column; gap:.2rem }
-.ad-nav a{ display:flex; align-items:center; gap:.7rem; padding:.7rem .9rem; border-radius:10px; font-family:var(--ff-titulo); text-transform:uppercase; letter-spacing:.1em; font-size:.82rem; opacity:.85 }
+.ad-nav a{ display:flex; align-items:center; gap:.7rem; padding:.7rem .9rem; border-radius:10px; font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:.1em; font-size:.82rem; opacity:.85 }
 .ad-nav a svg{ width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round }
 .ad-nav a:hover{ background:rgba(243,238,228,.08); opacity:1 }
 .ad-nav a[aria-current]{ background:var(--oro); color:var(--burdeos-2); opacity:1 }
@@ -15,11 +15,11 @@ body.admin{ background:var(--hueso); color:var(--carbon); font-size:.95rem; min-
 .ad-nav small{ padding:.6rem .9rem; opacity:.55; font-size:.75rem }
 .ad-main{ padding:1.6rem var(--lado) 3rem; display:grid; gap:1.4rem; align-content:start }
 .ad-cab{ display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap }
-.ad-cab h1{ font-family:var(--ff-titulo); font-weight:600; text-transform:uppercase; font-size:1.8rem; color:var(--burdeos) }
+.ad-cab h1{ font-family:var(--ff-ui); font-weight:600; text-transform:uppercase; font-size:1.8rem; color:var(--burdeos) }
 .ad-cab p{ opacity:.7; margin-top:.2rem }
 .ad-grid{ display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:1.4rem; align-items:start }
 .tarjeta{ background:#FBFAF6; border:1.5px solid var(--hueso-3); border-radius:var(--r-logo-s); padding:1.2rem; box-shadow:0 10px 30px -22px rgba(28,24,24,.4) }
-.tarjeta h2{ font-family:var(--ff-titulo); font-weight:500; text-transform:uppercase; letter-spacing:.1em; font-size:.9rem; color:var(--burdeos); margin-bottom:.9rem; display:flex; justify-content:space-between; align-items:center }
+.tarjeta h2{ font-family:var(--ff-ui); font-weight:500; text-transform:uppercase; letter-spacing:.1em; font-size:.9rem; color:var(--burdeos); margin-bottom:.9rem; display:flex; justify-content:space-between; align-items:center }
 .tarjeta h2 .btn{ min-height:2.2rem; padding:.3rem .9rem; font-size:.74rem; letter-spacing:.1em }
 .tarjeta h2 .btn::after{ content:none }
 
@@ -30,25 +30,25 @@ body.admin{ background:var(--hueso); color:var(--carbon); font-size:.95rem; min-
 .fila.activo{ border-color:var(--oro); background:#FFF8E8 }
 .fila .agarre{ color:var(--hueso-3); cursor:grab; font-size:1.1rem; text-align:center }
 .fila img{ width:54px; height:40px; object-fit:cover; border-radius:6px }
-.fila .nom{ font-family:var(--ff-titulo); text-transform:uppercase; letter-spacing:.04em; font-size:.98rem; color:var(--burdeos-2) }
+.fila .nom{ font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:.04em; font-size:.98rem; color:var(--burdeos-2) }
 .fila .nom small{ display:block; font-family:var(--ff-cuerpo); text-transform:none; letter-spacing:0; font-size:.8rem; opacity:.7 }
-.fila .precio{ font-family:var(--ff-titulo); font-weight:600; color:var(--oro-oscuro) }
+.fila .precio{ font-family:var(--ff-ui); font-weight:600; color:var(--oro-oscuro) }
 .interruptor{ width:38px; height:22px; border-radius:999px; background:#4F7A3A; position:relative }
 .interruptor::after{ content:""; position:absolute; top:3px; left:19px; width:16px; height:16px; border-radius:50%; background:#fff }
 .interruptor.off{ background:var(--hueso-3) } .interruptor.off::after{ left:3px }
 .cat-tabs{ display:flex; gap:.4rem; flex-wrap:wrap; margin-bottom:1rem }
-.cat-tabs span{ font-family:var(--ff-titulo); text-transform:uppercase; letter-spacing:.08em; font-size:.76rem; padding:.35rem .7rem; border-radius:999px; border:1.5px solid var(--hueso-3); color:var(--burdeos) }
+.cat-tabs span{ font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:.08em; font-size:.76rem; padding:.35rem .7rem; border-radius:999px; border:1.5px solid var(--hueso-3); color:var(--burdeos) }
 .cat-tabs span.on{ background:var(--burdeos); border-color:var(--burdeos); color:var(--hueso) }
 
 /* formulario */
 .campo{ display:grid; gap:.3rem; margin-bottom:.9rem }
-.campo label{ font-family:var(--ff-titulo); text-transform:uppercase; letter-spacing:.1em; font-size:.74rem; color:var(--burdeos); display:flex; justify-content:space-between }
+.campo label{ font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:.1em; font-size:.74rem; color:var(--burdeos); display:flex; justify-content:space-between }
 .campo input, .campo textarea, .campo select{ font:inherit; padding:.6rem .8rem; border:1.5px solid var(--hueso-3); border-radius:10px; background:#fff; color:var(--carbon); width:100% }
 .campo textarea{ min-height:76px; resize:vertical }
 .campo input:focus, .campo textarea:focus{ outline:none; border-color:var(--oro) }
 .dos{ display:grid; grid-template-columns:1fr 1fr; gap:.8rem }
 .idiomas-tabs{ display:flex; gap:.3rem; margin-bottom:.6rem; flex-wrap:wrap }
-.idiomas-tabs span{ font-family:var(--ff-titulo); letter-spacing:.1em; font-size:.74rem; padding:.3rem .6rem; border-radius:6px; border:1.5px solid var(--hueso-3); color:var(--burdeos) }
+.idiomas-tabs span{ font-family:var(--ff-ui); letter-spacing:.1em; font-size:.74rem; padding:.3rem .6rem; border-radius:6px; border:1.5px solid var(--hueso-3); color:var(--burdeos) }
 .idiomas-tabs span.on{ background:var(--oro); border-color:var(--oro); color:var(--burdeos-2) }
 .idiomas-tabs span.auto::after{ content:"✦"; margin-left:.3rem; color:var(--oro-oscuro) }
 .nota{ font-size:.8rem; opacity:.7; margin-top:-.3rem; margin-bottom:.9rem }
@@ -57,7 +57,7 @@ body.admin{ background:var(--hueso); color:var(--carbon); font-size:.95rem; min-
 .alergenos label.on{ border-color:var(--oro); background:#FFF8E8 }
 .alergenos input{ accent-color:var(--burdeos) }
 .etiquetas{ display:flex; flex-wrap:wrap; gap:.4rem }
-.etiquetas span{ font-family:var(--ff-titulo); text-transform:uppercase; letter-spacing:.08em; font-size:.72rem; padding:.3rem .65rem; border-radius:999px; border:1.5px solid var(--hueso-3); color:var(--carbon-2) }
+.etiquetas span{ font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:.08em; font-size:.72rem; padding:.3rem .65rem; border-radius:999px; border:1.5px solid var(--hueso-3); color:var(--carbon-2) }
 .etiquetas span.on{ border-color:var(--burdeos); background:var(--burdeos); color:var(--hueso) }
 .foto-sube{ display:flex; gap:1rem; align-items:center }
 .foto-sube img{ width:120px; height:90px; object-fit:cover; border-radius:10px }
@@ -73,7 +73,7 @@ body.admin{ background:var(--hueso); color:var(--carbon); font-size:.95rem; min-
 .admin .btn--lleno:hover{ background:var(--burdeos-2) }
 .kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:.8rem }
 .kpi{ background:#FBFAF6; border:1.5px solid var(--hueso-3); border-radius:var(--r-logo-s); padding:.9rem 1rem }
-.kpi b{ display:block; font-family:var(--ff-titulo); font-size:1.8rem; font-weight:600; color:var(--burdeos) }
+.kpi b{ display:block; font-family:var(--ff-ui); font-size:1.8rem; font-weight:600; color:var(--burdeos) }
 .kpi span{ font-size:.8rem; opacity:.7 }
 .aviso{ background:#FFF8E8; border:1.5px solid var(--oro); border-radius:10px; padding:.7rem .9rem; font-size:.85rem; display:flex; gap:.6rem; align-items:center }
 .aviso b{ color:var(--oro-oscuro) }
@@ -88,3 +88,9 @@ body.admin{ background:var(--hueso); color:var(--carbon); font-size:.95rem; min-
   .fila{ grid-template-columns:54px minmax(0,1fr) auto; }
   .fila .agarre, .fila .interruptor{ display:none }
 }
+
+/* ---------- Fraunces en títulos, nombres y cifras; UI en etiquetas ---------- */
+.ad-top__marca, .ad-nav a, .tarjeta h2, .cat-tabs span, .campo label, .idiomas-tabs span, .etiquetas span{ font-weight:700 }
+.ad-cab h1{ font-family:var(--ff-titulo); font-weight:800; text-transform:none; letter-spacing:-.01em; font-size:2rem; font-variation-settings:"SOFT" 100,"opsz" 144 }
+.fila .nom{ font-family:var(--ff-titulo); font-weight:700; text-transform:none; letter-spacing:0; font-size:1.05rem; font-variation-settings:"SOFT" 100,"opsz" 48 }
+.fila .precio, .kpi b{ font-family:var(--ff-titulo); font-weight:700; font-variation-settings:"SOFT" 100,"opsz" 48 }

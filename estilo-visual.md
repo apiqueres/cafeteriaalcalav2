@@ -32,12 +32,15 @@ Propuesta del 29-10-2026 a partir del material de `imagenes/` y de la referencia
 
 Regla: burdeos y hueso llevan el 85 % de la web. Oro al 10 % y solo como metal (nunca fondos grandes). Azulejo y terracota para una lámina cada uno.
 
-## 4. Tipografía
+## 4. Tipografía (decidida el 29-10-2026)
 
-- **Titulares**: condensada bold en mayúsculas, como el logo. Candidata: **Oswald** (variable 200-700, licencia OFL) o **Big Shoulders Display** si se quiere más carácter. Tracking ligeramente abierto.
-- **Cuerpo**: una sans humanista limpia, **Figtree** o **Inter**, 400 y 600.
-- **Detalle elegante**: una serif itálica para cejas y citas de reseñas, **Instrument Serif** italic. Es lo que aporta el "dorado viejo elegante" sin recargar.
-- Autoalojadas en woff2 con `font-display: swap` y `preload`, como Velvet.
+- **Titulares, nombres de plato, precios y cifras**: **Fraunces** (Google Fonts, OFL), variable, con el eje SOFT al máximo y opsz 144 en titulares grandes y 48 en nombres de plato. Es la alternativa libre más cercana a Moranga. Peso 800 en titulares, 700 en platos. En frase normal, no en mayúsculas.
+- **Cejas y frases de detalle**: Fraunces itálica (misma familia).
+- **Cuerpo de texto**: **Manrope**, 400 y 700. Tiene cirílico.
+- **Etiquetas, botones, navegación y pestañas** (mayúsculas con tracking): Manrope 700.
+- **Respaldo para ruso y ucraniano**: Fraunces no tiene cirílico; en la pila va Oswald detrás, que sí lo tiene, y los titulares en RU y UK salen en Oswald.
+- Todo autoalojado en `site/lib/fonts/` (woff2 por subconjunto, latin y latin-ext para Fraunces) con `font-display: swap` y `preload` de Fraunces y Manrope latinas.
+- Las páginas de muestras usadas para decidir quedan en `site/tipografias/` (no enlazadas desde la web).
 
 ## 5. Lenguaje de formas
 
