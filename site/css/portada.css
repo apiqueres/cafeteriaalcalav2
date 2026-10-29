@@ -56,9 +56,9 @@
 .visita__nota{ margin-top:.8rem; font-size:.92rem; opacity:.8 }
 /* mapa clásico (ilustración sobre cartografía real); la mancha de café es el local */
 .mapa{ position:absolute; inset:0; display:block; overflow:hidden; border-radius:inherit }
-.mapa img{ width:100%; height:100%; object-fit:cover; transform-origin:45.6% 73.7%; transition:transform 1.2s var(--lento); filter:none }
+.mapa img{ width:100%; height:100%; object-fit:cover; transform-origin:47.5% 71.4%; transition:transform 1.2s var(--lento); filter:none }
 .mapa:hover img{ transform:scale(1.12) }
-.mapa__halo{ position:absolute; left:45.6%; top:73.7%; width:9%; aspect-ratio:1; transform:translate(-50%,-50%); border-radius:50%; box-shadow:0 0 0 2px rgba(107,26,43,.55); animation:halo 2.6s ease-out infinite; pointer-events:none }
+.mapa__halo{ position:absolute; left:47.5%; top:71.4%; width:9%; aspect-ratio:1; transform:translate(-50%,-50%); border-radius:50%; box-shadow:0 0 0 2px rgba(107,26,43,.55); animation:halo 2.6s ease-out infinite; pointer-events:none }
 @keyframes halo{ 0%{ transform:translate(-50%,-50%) scale(.6); opacity:.9 } 100%{ transform:translate(-50%,-50%) scale(1.6); opacity:0 } }
 .mapa__nota{ position:absolute; right:.8rem; bottom:.8rem; padding:.35rem .7rem; border-radius:999px; background:rgba(74,15,29,.85); color:var(--hueso); font-family:var(--ff-ui); font-weight:700; text-transform:uppercase; letter-spacing:.1em; font-size:.66rem; opacity:0; transform:translateY(4px); transition:opacity .3s, transform .4s var(--lento) }
 .mapa:hover .mapa__nota, .mapa:focus-visible .mapa__nota{ opacity:1; transform:none }
