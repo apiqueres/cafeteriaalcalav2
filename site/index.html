@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cafetería en Cullera · Alcalà Cafetería Baristas</title>
+<meta name="description" content="Alcalà, cafetería y baristas en Cullera. Café de especialidad, desayunos, brunch, bocadillos, hamburguesas y cócteles. Consulta la carta online y ven a vernos.">
+<link rel="canonical" href="https://alcalacullera.com/">
+<meta name="theme-color" content="#4A0F1D">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Alcalà · Cafetería Baristas">
+<meta property="og:title" content="Cafetería en Cullera · Alcalà Cafetería Baristas">
+<meta property="og:description" content="Café de especialidad, desayunos, brunch y mucho más en Cullera. Consulta la carta online.">
+<meta property="og:url" content="https://alcalacullera.com/">
+<meta property="og:image" content="https://alcalacullera.com/media/fotos/hero-tiles.webp">
+<link rel="icon" href="media/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="media/icono-512.png">
+<link rel="preload" href="lib/fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="lib/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="lib/fonts/fuentes.css">
+<link rel="stylesheet" href="lib/leaflet/leaflet.css">
+<link rel="stylesheet" href="css/base.css?v=2">
+<link rel="stylesheet" href="css/portada.css?v=1">
+<link rel="preload" href="media/3d/logo.glb?v=4" as="fetch" crossorigin>
+<link rel="modulepreload" href="lib/three/three.module.min.js">
+<script type="importmap">
+{ "imports": { "three": "./lib/three/three.module.min.js", "three/addons/": "./lib/three/addons/" } }
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"WebSite","@id":"https://alcalacullera.com/#web","url":"https://alcalacullera.com/","name":"Alcalà Cafetería Baristas","inLanguage":"es"},
+ {"@type":"CafeOrCoffeeShop","@id":"https://alcalacullera.com/#local","name":"Alcalà Cafetería · Baristas","url":"https://alcalacullera.com/",
+  "image":"https://alcalacullera.com/media/fotos/interior.webp","servesCuisine":["Café de especialidad","Desayunos","Brunch","Mediterránea"],
+  "address":{"@type":"PostalAddress","streetAddress":"Carrer del Pintor Ferrer Cabrera, 3","postalCode":"46400","addressLocality":"Cullera","addressRegion":"València","addressCountry":"ES"},
+  "geo":{"@type":"GeoCoordinates","latitude":39.16436,"longitude":-0.24564},
+  "telephone":"+34961725098","email":"cafeteriaalcala@hotmail.es","foundingDate":"1987-06-19",
+  "sameAs":["https://instagram.com/cafeteriaalcala","https://www.facebook.com/cafeteria.alcala/"],
+  "hasMenu":"https://alcalacullera.com/carta/",
+  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"23:00"}]}
+]}
+</script>
+</head>
+<body>
+
+<!-- telón de entrada -->
+<div class="telon" id="telon" aria-hidden="true">
+  <div class="telon__in">
+    <img src="media/logo-burdeos.webp" alt="" width="600" height="600" fetchpriority="high">
+    <span class="telon__barra"><i></i></span>
+    <span class="telon__frase">Cafetería · Baristas · Cullera</span>
+  </div>
+</div>
+
+<div class="avance" id="avance" aria-hidden="true"></div>
+
+<!-- barra de arriba -->
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#inicio" aria-label="Alcalà · Cafetería Baristas"><img src="media/logo-blanco.webp" alt="Alcalà" width="600" height="600"></a>
+  <nav class="nav__links" aria-label="Principal">
+    <a href="#presentacion">Nosotros</a>
+    <a href="#redes">Redes</a>
+    <a href="#visitanos">Visítanos</a>
+  </nav>
+  <div class="nav__der">
+    <div class="idiomas" data-idiomas>
+      <button class="idiomas__btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Cambiar idioma">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.8 3 2.8 16 0 19M12 2.5c-2.8 3-2.8 16 0 19"/></svg><span>ES</span>
+      </button>
+      <div class="idiomas__lista" role="menu">
+        <a href="./" hreflang="es" lang="es" aria-current="true"><b>ES</b> Español</a>
+        <a href="va/" hreflang="ca-ES" lang="ca-ES-valencia"><b>VA</b> Valencià</a>
+        <a href="en/" hreflang="en" lang="en"><b>EN</b> English</a>
+        <a href="fr/" hreflang="fr" lang="fr"><b>FR</b> Français</a>
+        <a href="pl/" hreflang="pl" lang="pl"><b>PL</b> Polski</a>
+        <a href="ru/" hreflang="ru" lang="ru"><b>RU</b> Русский</a>
+        <a href="uk/" hreflang="uk" lang="uk"><b>UK</b> Українська</a>
+      </div>
+    </div>
+    <a class="btn btn--lleno nav__cta" href="carta/">Carta</a>
+    <button class="nav__menu" id="menuBtn" aria-label="Abrir menú" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- hero -->
+<section class="hero" id="inicio">
+  <div class="hero__fondo" aria-hidden="true">
+    <picture>
+      <source media="(max-width:640px)" srcset="media/fotos/hero-tiles-movil.webp">
+      <img src="media/fotos/hero-tiles.webp" alt="" width="1920" height="823" fetchpriority="high">
+    </picture>
+    <!-- el vídeo en bucle lo añade hero.js sólo en pantallas anchas -->
+  </div>
+  <div class="hero__velo" aria-hidden="true"></div>
+  <canvas id="logo3d" class="hero__canvas" aria-hidden="true"></canvas>
+  <!-- plan B si no hay WebGL o falla el modelo -->
+  <div class="hero__logo" id="logoPlano" aria-hidden="true" hidden><img src="media/logo-oro.webp" alt="" width="600" height="600" loading="lazy"></div>
+  <div class="hero__texto">
+    <h1 class="hero__h1">Alcalà · Cafetería y baristas en Cullera<b>Tu punto de encuentro desde 1987.</b></h1>
+    <div class="hero__botones">
+      <a class="btn btn--lleno" href="carta/">Ver la carta</a>
+      <a class="btn" href="#visitanos">Cómo llegar</a>
+    </div>
+  </div>
+  <span class="hero__scroll" aria-hidden="true"></span>
+  <div class="hero__loader" id="loader" aria-hidden="true"><span></span></div>
+</section>
+
+<main class="pagina" id="pagina">
+
+  <!-- presentación -->
+  <section class="lamina lamina--burdeos presenta" id="presentacion" aria-labelledby="t-presenta">
+    <div class="sombra-tapa"></div>
+    <div class="caja lamina__in">
+      <h2 class="titular t-xl" id="t-presenta">Desde 1987,<br>el punto de encuentro.</h2>
+      <div class="cuerpo">
+        <div class="presenta__txt">
+          <p class="ceja rv">Cafetería · Baristas, en el barrio de San Antonio de Cullera</p>
+          <p class="grande rv" style="--d:.1s">Abrimos el 19 de junio de 1987 y desde entonces la <b>cocina no para</b>: puedes desayunar a la hora de cenar o cenar a la hora de desayunar. Un local luminoso, de azulejo y madera, renovado para que te quedes un rato más.</p>
+          <p class="rv" style="--d:.2s">Desayunos y <b>almuerzo valenciano</b>, bocadillos, hamburguesas, ensaladas, carnes, pescados y cócteles. Con <b>carta vegana y sin gluten</b>, carta en braille y el primer desfibrilador de una cafetería en la Comunitat Valenciana.</p>
+          <ul class="sellos rv" style="--d:.3s" aria-label="Lo que nos define">
+            <li>Desde 1987</li><li>Cocina sin parar</li><li>Vegano y sin gluten</li><li>Terraza</li>
+          </ul>
+          <p class="rv" style="--d:.4s"><a class="btn" href="#visitanos">Ven a conocernos</a></p>
+        </div>
+        <figure class="foto foto--arco presenta__foto"><img src="media/fotos/interior.webp" alt="Interior de Alcalà Cafetería en Cullera: pared de azulejo, bancos de arcos y plantas" width="960" height="640" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- carta destacada -->
+  <section class="lamina lamina--azulejo cartaDest" id="carta" aria-labelledby="t-carta">
+    <div class="sombra-tapa"></div>
+    <div class="caja lamina__in">
+      <div class="cartaDest__cab">
+        <h2 class="titular t-l" id="t-carta">La carta.</h2>
+        <p class="rv">Desde el café de la mañana hasta el cóctel de la tarde. Toca una categoría para verla entera, con precios y alérgenos.</p>
+      </div>
+      <ul class="categorias" aria-label="Categorías de la carta">
+        <li class="rv" style="--d:.05s"><a class="cat" href="carta/#desayunos"><img src="media/carta/desayunos.webp" alt="" width="800" height="603" loading="lazy"><span>Desayunos</span></a></li>
+        <li class="rv" style="--d:.1s"><a class="cat" href="carta/#cafes"><img src="media/carta/cafes.webp" alt="" width="800" height="603" loading="lazy"><span>Cafés</span></a></li>
+        <li class="rv" style="--d:.15s"><a class="cat" href="carta/#bocadillos"><img src="media/carta/bocadillos.webp" alt="" width="800" height="603" loading="lazy"><span>Bocadillos</span></a></li>
+        <li class="rv" style="--d:.2s"><a class="cat" href="carta/#hamburguesas"><img src="media/carta/hamburguesas.webp" alt="" width="800" height="603" loading="lazy"><span>Hamburguesas</span></a></li>
+        <li class="rv" style="--d:.25s"><a class="cat" href="carta/#carnes"><img src="media/carta/carnes.webp" alt="" width="800" height="603" loading="lazy"><span>Carnes</span></a></li>
+        <li class="rv" style="--d:.3s"><a class="cat" href="carta/#vegana"><img src="media/carta/vegana.webp" alt="" width="800" height="603" loading="lazy"><span>Carta vegana</span></a></li>
+        <li class="rv" style="--d:.35s"><a class="cat" href="carta/#postres"><img src="media/carta/postres.webp" alt="" width="800" height="603" loading="lazy"><span>Postres</span></a></li>
+        <li class="rv" style="--d:.4s"><a class="cat" href="carta/#cocteles"><img src="media/carta/cocteles.webp" alt="" width="800" height="603" loading="lazy"><span>Cócteles</span></a></li>
+      </ul>
+      <div class="cartaDest__pie rv" style="--d:.45s"><a class="btn btn--lleno" href="carta/">Ver toda la carta</a></div>
+    </div>
+  </section>
+
+  <!-- redes -->
+  <section class="lamina lamina--hueso redes" id="redes" aria-label="Redes sociales">
+    <div class="sombra-tapa"></div>
+    <div class="lamina__in">
+      <div class="caja redes__cab">
+        <div>
+          <h2 class="titular t-l">Nuestro día a día.</h2>
+          <p class="rv" style="--d:.15s">Cafés, platos y el ambiente de Alcalà, cada semana en nuestras redes. Toca un clip y te llevamos al perfil.</p>
+        </div>
+        <div class="redes__btns rv" style="--d:.25s">
+          <a class="btn" href="https://instagram.com/cafeteriaalcala" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn" href="https://www.tiktok.com/@cafeteriaalcala" target="_blank" rel="noopener">TikTok</a>
+          <a class="btn" href="https://www.facebook.com/cafeteria.alcala/" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+      <div class="reels__marquee rv" style="--d:.2s" id="reelsMarquee">
+        <div class="reels__track" id="reelsTrack"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- visítanos -->
+  <section class="lamina lamina--burdeos visita" id="visitanos" aria-labelledby="t-visita">
+    <div class="sombra-tapa"></div>
+    <div class="visita__fondo" aria-hidden="true"><img src="media/fotos/paint-terraza.webp" alt="" width="1600" height="905" loading="lazy"></div>
+    <div class="caja lamina__in">
+      <h2 class="titular t-xl" id="t-visita">Visítanos en Alcalà.</h2>
+      <div class="cuerpo">
+        <div class="visita__datos">
+          <div class="rv" style="--d:.1s">
+            <h3 class="h3 raya">Horario</h3>
+            <dl class="horario">
+              <dt>Lunes a miércoles</dt><dd>9:00 - 23:00</dd>
+              <dt>Jueves</dt><dd>Cerrado</dd>
+              <dt>Viernes a domingo</dt><dd>9:00 - 23:00</dd>
+            </dl>
+            <p class="visita__nota">En agosto abrimos también los jueves. Cocina abierta todo el día.</p>
+          </div>
+          <div class="rv" style="--d:.2s">
+            <h3 class="h3 raya">Dirección</h3>
+            <p>Carrer del Pintor Ferrer Cabrera, 3<br>46400 Cullera (València) · Barrio de San Antonio</p>
+          </div>
+          <div class="rv" style="--d:.3s">
+            <h3 class="h3 raya">Contacto</h3>
+            <p>Reservamos mesa para comidas. Llámanos o escríbenos.</p>
+            <div class="visita__acciones">
+              <a class="btn btn--lleno btn--ico" href="tel:+34961725098"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z"/></svg>961 72 50 98</a>
+              <a class="btn btn--ico" href="mailto:cafeteriaalcala@hotmail.es"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a>
+              <a class="btn btn--ico" href="https://www.google.com/maps/dir/?api=1&destination=39.16436,-0.24564" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Cómo llegar</a>
+            </div>
+          </div>
+        </div>
+        <div class="foto visita__mapa rv" style="--d:.15s">
+          <div id="mapa" role="img" aria-label="Mapa de Alcalà en el Carrer del Pintor Ferrer Cabrera 3, Cullera"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- cintas -->
+<div class="cintas" aria-hidden="true">
+  <div class="cinta"><div class="cinta__pista"><span>Café de especialidad</span><span>Desayunos</span><span>Brunch</span><span>Bocadillos</span><span>Hamburguesas</span><span>Cócteles</span><span>Terraza</span></div></div>
+  <div class="cinta cinta--2"><div class="cinta__pista"><span>Alcalà</span><span>Cafetería · Baristas</span><span>Cullera</span><span>Alcalà</span><span>Cafetería · Baristas</span><span>Cullera</span></div></div>
+</div>
+
+<!-- pie -->
+<footer class="pie" id="footer">
+  <div class="pie__pintura" aria-hidden="true"><img src="media/fotos/paint-cullera.webp" alt="" width="1600" height="905" loading="lazy"></div>
+  <div class="caja">
+    <p class="titular t-xl">Nos vemos en Alcalà.</p>
+    <p class="pie__nota grande">Un café bien hecho y un rato tranquilo te esperan en Cullera.</p>
+    <div class="pie__cols">
+      <div class="pie__marca">
+        <a class="pie__logo" href="#inicio" aria-label="Alcalà, volver arriba"><img src="media/logo-blanco.webp" alt="Alcalà" width="600" height="600" loading="lazy"></a>
+        <p>Café de especialidad, desayunos y brunch, bocadillos, hamburguesas, ensaladas y cócteles.</p>
+      </div>
+      <nav aria-label="Descubre">
+        <h4>Descubre</h4>
+        <a href="carta/">Carta</a>
+        <a href="#presentacion">Nosotros</a>
+        <a href="#redes">Redes</a>
+      </nav>
+      <nav aria-label="Visítanos">
+        <h4>Visítanos</h4>
+        <a href="#visitanos">Horario y dirección</a>
+        <a href="tel:+34961725098">961 72 50 98</a>
+        <a href="mailto:cafeteriaalcala@hotmail.es">cafeteriaalcala@hotmail.es</a>
+      </nav>
+      <nav aria-label="Síguenos">
+        <h4>Síguenos</h4>
+        <a href="https://instagram.com/cafeteriaalcala" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@cafeteriaalcala" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.facebook.com/cafeteria.alcala/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Cafeter%C3%ADa+Alcal%C3%A1+Cullera" target="_blank" rel="noopener">Google Maps</a>
+      </nav>
+    </div>
+    <div class="pie__legal">
+      <span>© <span id="yr">2026</span> Alcalà Cafetería · Baristas, Cullera.</span>
+      <nav aria-label="Legal"><a href="aviso-legal/">Aviso legal</a><a href="privacidad/">Privacidad</a><a href="cookies/">Cookies</a></nav>
+    </div>
+  </div>
+</footer>
+
+<!-- menú de móvil -->
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+  <button class="menu__cerrar" id="menuCerrar" aria-label="Cerrar menú">✕</button>
+  <a href="#inicio">Inicio</a>
+  <a href="#presentacion">Nosotros</a>
+  <a href="#redes">Redes</a>
+  <a href="#visitanos">Visítanos</a>
+  <a href="carta/" class="menu__carta">Carta</a>
+  <nav class="idiomas-fila" aria-label="Idioma">
+    <a href="./" hreflang="es" lang="es" aria-current="true">ES</a><a href="va/" hreflang="ca-ES" lang="ca-ES-valencia">VA</a><a href="en/" hreflang="en" lang="en">EN</a><a href="fr/" hreflang="fr" lang="fr">FR</a><a href="pl/" hreflang="pl" lang="pl">PL</a><a href="ru/" hreflang="ru" lang="ru">RU</a><a href="uk/" hreflang="uk" lang="uk">UK</a>
+  </nav>
+  <div class="menu__redes"><a href="https://instagram.com/cafeteriaalcala" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@cafeteriaalcala" target="_blank" rel="noopener">TikTok</a><a href="https://www.facebook.com/cafeteria.alcala/" target="_blank" rel="noopener">Facebook</a></div>
+</div>
+
+<!-- botones flotantes de móvil -->
+<div class="flotante" aria-label="Contacto rápido">
+  <a href="tel:+34961725098" aria-label="Llamar al 961 72 50 98"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z"/></svg></a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=39.16436,-0.24564" target="_blank" rel="noopener" aria-label="Cómo llegar"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></a>
+</div>
+
+<script>
+/* clips de redes (cortados del vídeo del cliente; cuando exista el panel, los pondrá el servidor) */
+window.CLIPS = [1,2,3,4,5,6,7,8,9].map(function(i){ return { video: 'media/reels/reel' + i + '.mp4', poster: 'media/reels/reel' + i + '.webp', destino: 'https://instagram.com/cafeteriaalcala' }; });
+</script>
+<script src="js/hero.js?v=5" type="module"></script>
+<script src="lib/lenis.min.js" defer></script>
+<script src="lib/leaflet/leaflet.js" defer></script>
+<script src="js/base.js?v=2" defer></script>
+<script src="js/portada.js?v=2" defer></script>
+<script>
+/* mapa: se monta cuando la sección asoma (Leaflet + teselas de OpenStreetMap) */
+addEventListener('load', function(){
+  var el = document.getElementById('mapa'); if(!el || !window.L) return;
+  var POS = [39.16436, -0.24564];
+  function montar(){
+    var map = L.map(el, { scrollWheelZoom: false, zoomControl: true, attributionControl: true }).setView(POS, 16);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
+    var icono = L.divIcon({ className: 'pin', html: '<i></i><span>Alcalà</span>', iconSize: [44, 60], iconAnchor: [22, 58] });
+    L.marker(POS, { icon: icono }).addTo(map).bindPopup('<b>Alcalà · Cafetería Baristas</b><br>Carrer del Pintor Ferrer Cabrera, 3');
+    setTimeout(function(){ map.invalidateSize(); }, 400);
+  }
+  if('IntersectionObserver' in window){ var io = new IntersectionObserver(function(es){ if(es[0].isIntersecting){ io.disconnect(); montar(); } }, { rootMargin: '300px' }); io.observe(el); }
+  else montar();
+});
+</script>
+</body>
+</html>

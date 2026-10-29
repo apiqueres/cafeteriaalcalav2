@@ -1,0 +1,308 @@
+/* Alcalà Cafetería · Baristas — base.css
+   Tokens de diseño, reset, tipografía, botones, barra de arriba, menú de móvil,
+   telón de entrada, hero, láminas apiladas, cintas, footer y ajustes de móvil.
+   Lo específico de cada lámina de la portada va en portada.css. */
+
+/* ====================== tokens ====================== */
+:root{
+  --burdeos:#6B1A2B; --burdeos-2:#4A0F1D; --burdeos-3:#8A2438;
+  --hueso:#F3EEE4; --hueso-2:#E8E1D3; --hueso-3:#DCD3C2;
+  --oro:#B8924F; --oro-claro:#D9BC7E; --oro-oscuro:#8E6D37;
+  --azulejo:#5E7B8A; --azulejo-2:#3E5663; --azulejo-3:#7E9AA8;
+  --terracota:#C7703F; --carbon:#1C1818; --carbon-2:#3A3333;
+
+  --r-logo:28px 0 28px 0;        /* esquinas del logo: arriba-izq y abajo-der */
+  --r-logo-s:16px 0 16px 0;
+  --r-boton:999px;
+  --r-lamina:32px;
+
+  --lado:clamp(1.2rem,4.2vw,4.5rem);
+  --hueco:clamp(1rem,2vw,2.2rem);
+  --nav:72px;
+  --u:1rem;
+
+  --ff-titulo:"Oswald",Impact,"Arial Narrow",sans-serif;
+  --ff-cuerpo:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ff-detalle:"Instrument Serif",Georgia,"Times New Roman",serif;
+
+  --suave:cubic-bezier(.2,.7,.2,1);
+  --lento:cubic-bezier(.16,1,.3,1);
+  --telon:cubic-bezier(.77,0,.18,1);
+
+  --sombra-carta:0 18px 50px -20px rgba(28,24,24,.45);
+  --sombra-oro:0 0 0 1px rgba(184,146,79,.35);
+}
+@media (min-width:1400px) and (min-height:800px){ :root{ --u:min(1vw,1.8vh) } }
+
+/* ====================== reset ====================== */
+*,*::before,*::after{ box-sizing:border-box }
+html{ -webkit-text-size-adjust:100%; scroll-behavior:auto }
+body{
+  margin:0; background:var(--burdeos-2); color:var(--hueso);
+  font-family:var(--ff-cuerpo); font-size:clamp(1rem,.95rem + .25vw,1.125rem); line-height:1.6;
+  -webkit-font-smoothing:antialiased; overflow-x:clip;
+}
+img,video,svg,canvas{ display:block; max-width:100% }
+img{ height:auto }
+a{ color:inherit; text-decoration:none }
+button{ font:inherit; color:inherit; background:none; border:0; padding:0; cursor:pointer }
+h1,h2,h3,h4,p,figure,dl,dd{ margin:0 }
+ul{ margin:0; padding:0; list-style:none }
+.sr-only{ position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0 }
+:focus-visible{ outline:2px solid var(--oro); outline-offset:3px }
+::selection{ background:var(--oro); color:var(--burdeos-2) }
+
+/* ====================== tipografía ====================== */
+.titular{
+  font-family:var(--ff-titulo); font-weight:600; text-transform:uppercase; letter-spacing:.01em;
+  line-height:.98; text-wrap:balance;
+}
+.t-xl{ font-size:clamp(2.6rem,6.2vw,6rem) }
+.t-l{  font-size:clamp(2.1rem,4.6vw,4.4rem) }
+.t-m{  font-size:clamp(1.5rem,2.8vw,2.4rem) }
+.ceja{
+  font-family:var(--ff-detalle); font-style:italic; font-weight:400; text-transform:none; letter-spacing:0;
+  font-size:clamp(1.15rem,1.5vw,1.5rem); color:var(--oro); line-height:1.2;
+}
+.grande{ font-size:clamp(1.1rem,1rem + .55vw,1.4rem); line-height:1.45; font-weight:500 }
+p b{ font-weight:700 }
+.raya{ position:relative; padding-bottom:.6rem; margin-bottom:1rem }
+.raya::after{ content:""; position:absolute; left:0; bottom:0; width:2.2rem; height:2px; background:var(--oro) }
+.h3{ font-family:var(--ff-titulo); font-weight:500; text-transform:uppercase; letter-spacing:.14em; font-size:.85rem; opacity:.85 }
+.oro{ color:var(--oro) }
+
+/* titulares palabra a palabra (el JS envuelve cada palabra en .pal > span) */
+.pal{ display:inline-block; overflow:hidden; vertical-align:bottom; padding-bottom:.08em; margin-bottom:-.08em }
+.pal>span{ display:inline-block; transform:translateY(110%); transition:transform .9s var(--lento); transition-delay:calc(var(--i,0)*55ms) }
+.in .pal>span, .titular.in .pal>span{ transform:none }
+
+/* entradas: .rv aparece al asomar en pantalla */
+.rv{ opacity:0; transform:translateY(22px); transition:opacity .8s var(--suave), transform .9s var(--lento); transition-delay:var(--d,0s) }
+.rv.in, .in>.rv, .in .rv{ opacity:1; transform:none }
+
+/* ====================== contenedor ====================== */
+.caja{ max-width:1500px; margin:0 auto; padding-inline:var(--lado); width:100% }
+
+/* ====================== botones ====================== */
+.btn{
+  display:inline-flex; align-items:center; gap:.6rem; min-height:3rem; padding:.7rem 1.5rem;
+  border-radius:var(--r-boton); border:1.5px solid var(--oro); color:var(--hueso);
+  font-family:var(--ff-titulo); font-weight:500; text-transform:uppercase; letter-spacing:.12em; font-size:.92rem;
+  transition:background .3s var(--suave), color .3s, transform .4s var(--lento), border-color .3s;
+}
+.btn::after{ content:"→"; font-family:var(--ff-cuerpo); transition:transform .4s var(--lento) }
+.btn:hover{ background:var(--oro); color:var(--burdeos-2); transform:translateY(-2px) }
+.btn:hover::after{ transform:translateX(4px) }
+.btn--lleno{ background:var(--oro); color:var(--burdeos-2) }
+.btn--lleno:hover{ background:var(--oro-claro) }
+.btn--burdeos{ background:var(--burdeos); border-color:var(--burdeos); color:var(--hueso) }
+.btn--burdeos:hover{ background:var(--burdeos-2); border-color:var(--burdeos-2); color:var(--hueso) }
+.btn--sin{ border-color:transparent; padding-inline:.4rem }
+.btn--sin:hover{ background:none; color:var(--oro) }
+.btn--ico::after{ content:none }
+.btn--ico svg{ width:1.15em; height:1.15em; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round }
+
+/* ====================== barra de progreso ====================== */
+.avance{ position:fixed; inset:0 0 auto 0; height:3px; z-index:120; background:var(--oro); transform:scaleX(0); transform-origin:left; pointer-events:none }
+
+/* ====================== barra de arriba ====================== */
+.nav{
+  position:fixed; inset:0 0 auto 0; z-index:100; height:var(--nav);
+  display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:0 var(--lado);
+  transition:background .4s ease, box-shadow .4s ease;
+  animation:navEntra 1s var(--lento) 1.2s both;
+}
+@keyframes navEntra{ from{ transform:translateY(-100%); opacity:0 } }
+.nav--fondo{ background:rgba(74,15,29,.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); box-shadow:0 1px 0 rgba(184,146,79,.25) }
+.nav__logo img{ height:44px; width:44px; transition:transform .4s var(--lento) }
+.nav__logo:hover img{ transform:rotate(-6deg) scale(1.05) }
+.nav__links{ display:flex; gap:clamp(1.2rem,2.4vw,2.6rem) }
+.nav__links a{
+  font-family:var(--ff-titulo); font-weight:500; text-transform:uppercase; letter-spacing:.14em; font-size:.88rem;
+  position:relative; padding:.4rem 0;
+}
+.nav__links a::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:1.5px; background:var(--oro); transform:scaleX(0); transform-origin:right; transition:transform .4s var(--lento) }
+.nav__links a:hover::after, .nav__links a[aria-current]::after{ transform:scaleX(1); transform-origin:left }
+.nav__der{ display:flex; align-items:center; gap:.8rem }
+.nav__cta{ min-height:2.6rem; padding:.45rem 1.2rem; font-size:.84rem }
+.nav__menu{ display:none; width:44px; height:44px; flex-direction:column; justify-content:center; align-items:center; gap:5px }
+.nav__menu span{ width:24px; height:1.8px; background:var(--hueso); transition:transform .4s var(--lento), opacity .3s }
+
+/* idiomas */
+.idiomas{ position:relative }
+.idiomas__btn{ display:flex; align-items:center; gap:.4rem; min-height:2.6rem; padding:.4rem .8rem; border:1.5px solid rgba(243,238,228,.35); border-radius:var(--r-boton); font-family:var(--ff-titulo); letter-spacing:.1em; font-size:.84rem; transition:border-color .3s }
+.idiomas__btn:hover, .idiomas.abierto .idiomas__btn{ border-color:var(--oro) }
+.idiomas__btn svg{ width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.6 }
+.idiomas__lista{
+  position:absolute; top:calc(100% + .6rem); right:0; min-width:11rem; padding:.5rem; background:var(--hueso); color:var(--carbon);
+  border-radius:var(--r-logo-s); box-shadow:var(--sombra-carta); display:grid; gap:.1rem;
+  opacity:0; transform:translateY(-6px); pointer-events:none; transition:opacity .25s, transform .3s var(--lento);
+}
+.idiomas.abierto .idiomas__lista{ opacity:1; transform:none; pointer-events:auto }
+.idiomas__lista a{ display:flex; gap:.6rem; padding:.5rem .7rem; border-radius:8px; font-size:.92rem }
+.idiomas__lista a b{ font-family:var(--ff-titulo); font-weight:500; letter-spacing:.08em; width:1.8rem; color:var(--burdeos) }
+.idiomas__lista a:hover, .idiomas__lista a[aria-current]{ background:var(--hueso-2) }
+
+/* ====================== menú de móvil ====================== */
+.menu{
+  position:fixed; inset:0; z-index:200; background:var(--burdeos-2); color:var(--hueso);
+  display:flex; flex-direction:column; justify-content:center; gap:.2rem; padding:5rem var(--lado) 2.4rem;
+  clip-path:circle(0% at calc(100% - 42px) 36px); visibility:hidden; transition:clip-path .7s var(--telon), visibility .7s;
+}
+.menu.abierto{ clip-path:circle(150% at calc(100% - 42px) 36px); visibility:visible }
+.menu::before{ content:""; position:absolute; inset:0; background:url(../media/texturas/papel.webp) center/420px; opacity:.07; mix-blend-mode:screen; pointer-events:none }
+.menu__cerrar{ position:absolute; top:14px; right:calc(var(--lado) - 8px); width:44px; height:44px; font-size:1.5rem; color:var(--oro) }
+.menu>a{
+  font-family:var(--ff-titulo); font-weight:500; text-transform:uppercase; font-size:clamp(2.4rem,9vw,3.6rem); line-height:1.1; letter-spacing:.02em;
+  opacity:0; transform:translateY(24px); transition:opacity .5s, transform .6s var(--lento); transition-delay:calc(.15s + var(--i,0)*60ms);
+}
+.menu.abierto>a{ opacity:1; transform:none }
+.menu__carta{ color:var(--oro) }
+.menu__redes{ margin-top:1.6rem; display:flex; gap:1rem; font-family:var(--ff-cuerpo); font-size:1rem; text-transform:none; letter-spacing:0 }
+.menu__redes a{ opacity:.8 }
+.idiomas-fila{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1.4rem }
+.idiomas-fila a{ font-family:var(--ff-titulo); letter-spacing:.1em; font-size:.84rem; padding:.45rem .8rem; border:1.5px solid rgba(243,238,228,.3); border-radius:var(--r-boton) }
+.idiomas-fila a[aria-current]{ background:var(--oro); border-color:var(--oro); color:var(--burdeos-2) }
+
+/* ====================== telón de entrada ====================== */
+.telon{
+  position:fixed; inset:0; z-index:500; background:var(--hueso); color:var(--burdeos); display:grid; place-items:center;
+  pointer-events:none; clip-path:inset(0 0 0 0); transition:clip-path 1s var(--telon);
+}
+.telon::before{ content:""; position:absolute; inset:0; background:url(../media/texturas/papel.webp) center/520px; opacity:.5; mix-blend-mode:multiply }
+.telon.fuera{ clip-path:inset(0 0 100% 0) }
+.telon.quitado{ display:none }
+.telon__in{ position:relative; display:grid; justify-items:center; gap:1.2rem; animation:telonLogo .9s var(--lento) both }
+@keyframes telonLogo{ from{ opacity:0; transform:translateY(16px) scale(.96) } }
+.telon__in img{ width:clamp(120px,18vw,170px); height:auto }
+.telon__barra{ width:clamp(120px,18vw,170px); height:2px; background:rgba(107,26,43,.18); overflow:hidden }
+.telon__barra i{ display:block; height:100%; background:var(--oro); transform:scaleX(var(--carga,0)); transform-origin:left; transition:transform .25s linear }
+.telon__frase{ font-family:var(--ff-detalle); font-style:italic; font-size:1.1rem; color:var(--burdeos) }
+
+/* ====================== hero ====================== */
+.hero{
+  position:sticky; top:0; z-index:1; width:100%; height:100svh; min-height:560px; overflow:hidden;
+  background:var(--azulejo-2); color:var(--hueso);
+}
+.hero__fondo{ position:absolute; inset:0; z-index:0 }
+.hero__fondo img, .hero__fondo video{ width:100%; height:100%; object-fit:cover; object-position:center 40% }
+.hero__fondo video{ position:absolute; inset:0 }
+.hero__velo{ position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:
+    linear-gradient(180deg, rgba(74,15,29,.55) 0%, rgba(74,15,29,.1) 28%, rgba(74,15,29,0) 45%, rgba(74,15,29,.55) 72%, rgba(74,15,29,.94) 100%),
+    radial-gradient(ellipse 60% 50% at 50% 42%, rgba(184,146,79,.18), transparent 70%);
+}
+.hero__canvas{ position:absolute; inset:0; z-index:3; width:100%; height:100%; cursor:grab; touch-action:pan-y }
+.hero__canvas:active{ cursor:grabbing }
+.hero__logo{ position:absolute; z-index:3; left:50%; top:38%; width:clamp(200px,30vw,380px); transform:translate(-50%,-50%); filter:drop-shadow(0 20px 40px rgba(0,0,0,.45)) }
+.hero__logo img{ width:100%; height:auto }
+.hero__texto{ position:absolute; z-index:4; left:0; right:0; bottom:clamp(2.2rem,6vh,4.5rem); text-align:center; display:grid; justify-items:center; gap:1.1rem; padding-inline:var(--lado) }
+.hero__h1{ font-family:var(--ff-titulo); font-weight:500; text-transform:uppercase; letter-spacing:.2em; font-size:clamp(.82rem,1.2vw,1rem); opacity:.92 }
+.hero__h1 b{ display:block; font-family:var(--ff-detalle); font-style:italic; font-weight:400; text-transform:none; letter-spacing:0; font-size:clamp(1.5rem,2.6vw,2.4rem); color:var(--oro-claro); margin-top:.4rem }
+.hero__botones{ display:flex; flex-wrap:wrap; justify-content:center; gap:.7rem }
+.hero__scroll{ position:absolute; z-index:4; left:50%; bottom:.9rem; transform:translateX(-50%); width:1px; height:34px; background:linear-gradient(var(--oro),transparent); opacity:.7; animation:cae 2.2s var(--suave) infinite }
+@keyframes cae{ 0%{ transform:translate(-50%,-10px) scaleY(.4); opacity:0 } 40%{ opacity:.8 } 100%{ transform:translate(-50%,10px) scaleY(1); opacity:0 } }
+.hero__loader{ position:absolute; inset:0; z-index:5; display:grid; place-items:center; transition:opacity .6s; pointer-events:none }
+.hero__loader.hide{ opacity:0 }
+.hero__loader span{ width:34px; height:34px; border-radius:50%; border:2.5px solid rgba(243,238,228,.2); border-top-color:var(--oro); animation:spin .8s linear infinite }
+@keyframes spin{ to{ transform:rotate(360deg) } }
+
+/* ====================== láminas ====================== */
+.pagina{ position:relative; z-index:2; background:var(--burdeos-2) }
+.lamina{ position:relative; background:var(--hueso); color:var(--carbon); border-radius:var(--r-lamina) var(--r-lamina) 0 0; scroll-margin-top:0; isolation:isolate }
+.lamina--burdeos{ background:var(--burdeos); color:var(--hueso) }
+.lamina--azulejo{ background:var(--azulejo-2); color:var(--hueso) }
+.lamina--hueso::before, .lamina--papel::before{ content:""; position:absolute; inset:0; z-index:-1; border-radius:inherit; background:url(../media/texturas/papel.webp) center/560px; opacity:.38; mix-blend-mode:multiply; pointer-events:none }
+.lamina--azulejo::before{ content:""; position:absolute; inset:0; z-index:-1; border-radius:inherit; background:url(../media/texturas/azulejo.webp) center/420px; opacity:.22; mix-blend-mode:luminosity; pointer-events:none }
+.lamina--burdeos::after{ content:""; position:absolute; inset:0 0 auto 0; height:40%; z-index:-1; border-radius:inherit; background:linear-gradient(180deg, rgba(184,146,79,.14), transparent); pointer-events:none }
+.lamina__in{ display:flex; flex-direction:column; padding-top:clamp(3rem,7vw,6rem); padding-bottom:clamp(3rem,7vw,6rem) }
+.lamina__in>.titular{ margin-bottom:clamp(1.6rem,3vw,2.8rem) }
+.cuerpo{ display:grid; gap:var(--hueco); align-items:center }
+
+/* foto con las esquinas del logo + parallax interior según --entra */
+.foto{ position:relative; overflow:hidden; border-radius:var(--r-logo); background:var(--hueso-3); box-shadow:var(--sombra-carta) }
+.foto img{ width:100%; height:100%; object-fit:cover; transform:translateY(calc((var(--entra,1) - 1) * -6%)) scale(1.08); transition:transform .1s linear }
+.foto--arco{ border-radius:999px 999px var(--r-logo-s) var(--r-logo-s) }
+.foto--arco{ border-radius:50% 50% 16px 0 / 40% 40% 16px 0 }
+.marco-oro{ box-shadow:var(--sombra-carta), inset 0 0 0 1.5px rgba(184,146,79,.5) }
+
+/* escritorio: láminas apiladas, se encogen al quedar tapadas */
+@media (min-width:900px) and (min-height:600px){
+  .lamina{ position:sticky; top:0; height:100svh; overflow:clip;
+    transform:scale(calc(1 - var(--cubre,0) * .06)); transform-origin:50% 35%; will-change:transform }
+  .lamina::after{ opacity:1 }
+  .lamina .sombra-tapa{ content:""; position:absolute; inset:0; z-index:5; background:var(--burdeos-2); opacity:calc(var(--cubre,0) * .55); pointer-events:none; border-radius:inherit }
+  .lamina__in{ height:100%; padding-top:calc(var(--nav) + 3vh); padding-bottom:4.4vh; justify-content:center }
+  .lamina--libre{ position:relative; height:auto; transform:none }
+}
+@media (max-width:899px), (max-height:599px){
+  .lamina{ position:relative; top:auto; transform:none; border-radius:0 }
+  .lamina .sombra-tapa{ display:none }
+  .lamina__in{ padding-top:calc(var(--nav) + 1.6rem); padding-bottom:3.4rem }
+}
+
+/* ====================== cintas ====================== */
+.cintas{ position:relative; z-index:2; background:var(--burdeos-2) }
+.cinta{ position:relative; overflow:hidden; padding:clamp(.8rem,1.4vw,1.2rem) 0; background:var(--hueso); color:var(--burdeos); border-block:1.5px solid var(--oro) }
+.cinta--2{ background:var(--burdeos); color:var(--oro-claro); border-top:0 }
+.cinta__pista{ display:flex; width:max-content; white-space:nowrap; will-change:transform }
+.cinta__pista span{ font-family:var(--ff-titulo); font-weight:500; text-transform:uppercase; letter-spacing:.18em; font-size:clamp(.95rem,1.4vw,1.25rem); padding:0 1.6rem; display:inline-flex; align-items:center; gap:1.6rem }
+.cinta__pista span::after{ content:"◆"; font-size:.5em; color:var(--oro) }
+
+/* ====================== footer ====================== */
+.pie{ position:relative; z-index:2; background:var(--burdeos-2); color:var(--hueso); padding:clamp(4rem,8vw,7rem) 0 1.6rem; overflow:hidden; isolation:isolate }
+.pie__pintura{ position:absolute; inset:0; z-index:-1 }
+.pie__pintura img{ width:100%; height:100%; object-fit:cover; object-position:center 60%; opacity:.22; filter:saturate(.7) }
+.pie__pintura::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, var(--burdeos-2) 0%, rgba(74,15,29,.55) 50%, var(--burdeos-2) 100%) }
+.pie .titular{ color:var(--oro-claro) }
+.pie__nota{ max-width:34ch; margin-top:1rem; opacity:.9 }
+.pie__cols{ display:grid; grid-template-columns:1.4fr repeat(3,1fr); gap:2.4rem var(--hueco); margin-top:clamp(2.6rem,5vw,4rem); padding-top:2.4rem; border-top:1px solid rgba(184,146,79,.3) }
+.pie__logo img{ width:84px; height:84px }
+.pie__marca p{ margin-top:1rem; max-width:30ch; font-size:.95rem; opacity:.85 }
+.pie h4{ font-family:var(--ff-titulo); font-weight:500; text-transform:uppercase; letter-spacing:.16em; font-size:.8rem; color:var(--oro); margin-bottom:1rem }
+.pie nav a{ display:block; padding:.3rem 0; opacity:.88; transition:opacity .2s, transform .3s var(--lento) }
+.pie nav a:hover{ opacity:1; transform:translateX(4px); color:var(--oro-claro) }
+.pie__legal{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:.8rem 1.6rem; margin-top:3rem; padding-top:1.2rem; border-top:1px solid rgba(243,238,228,.12); font-size:.82rem; opacity:.7 }
+.pie__legal nav{ display:flex; gap:1.2rem }
+
+/* ====================== flotante de móvil ====================== */
+.flotante{ position:fixed; z-index:90; right:1rem; bottom:1rem; display:none; gap:.5rem }
+.flotante a{ width:52px; height:52px; border-radius:50%; display:grid; place-items:center; background:var(--oro); color:var(--burdeos-2); box-shadow:0 10px 24px -8px rgba(0,0,0,.5) }
+.flotante svg{ width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round }
+
+/* ====================== móvil ====================== */
+@media (max-width:899px){
+  .nav__links, .idiomas{ display:none }
+  .nav__menu{ display:flex }
+  .nav__cta{ display:none }
+  .flotante{ display:flex }
+  .pie__cols{ grid-template-columns:1fr 1fr }
+  .pie__marca{ grid-column:1 / -1 }
+  .avance{ display:none }
+}
+@media (max-width:640px){
+  :root{ --lado:1.3rem }
+  .pie__cols{ grid-template-columns:1fr }
+  .hero__logo{ width:min(62vw,300px); top:36% }
+  .hero__texto{ bottom:5.4rem; padding-right:calc(var(--lado) + 3.4rem); padding-left:calc(var(--lado) + 3.4rem) }
+  .hero__botones{ flex-direction:column; align-items:stretch; width:100%; max-width:280px }
+  .hero__botones .btn{ justify-content:center }
+}
+
+/* ====================== reducir movimiento ====================== */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important }
+  .pal>span{ transform:none } .rv{ opacity:1; transform:none }
+  .lamina{ transform:none }
+  .hero__scroll{ display:none }
+}
+
+/* cursor con grano de café (solo con ratón) */
+@media (hover:hover) and (pointer:fine){
+  :root{
+    --raton:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cg transform='translate(15 15) rotate(-40)'%3E%3Cellipse rx='7.5' ry='11.5' fill='%236B1A2B' stroke='%23F3EEE4' stroke-width='1.6'/%3E%3Cpath d='M.5 -10.5 C4.5 -5 -4.5 4 -.5 10.5' fill='none' stroke='%23F3EEE4' stroke-width='1.7' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E") 6 6, auto;
+    --raton-pulsa:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cg transform='translate(15 15) rotate(-40)'%3E%3Cellipse rx='7.5' ry='11.5' fill='%23B8924F' stroke='%234A0F1D' stroke-width='1.6'/%3E%3Cpath d='M.5 -10.5 C4.5 -5 -4.5 4 -.5 10.5' fill='none' stroke='%234A0F1D' stroke-width='1.7' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E") 6 6, pointer;
+  }
+  body{ cursor:var(--raton) }
+  a,button,summary,label,[role=button]{ cursor:var(--raton-pulsa) }
+}

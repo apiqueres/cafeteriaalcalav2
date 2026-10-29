@@ -1,0 +1,9 @@
+# dependencias y temporales
+node_modules/
+.claude/
+*.log
+Thumbs.db
+.DS_Store
+
+# modelo 3D sin comprimir (se regenera con herramientas/logo-glb.mjs)
+herramientas/logo-raw.glb

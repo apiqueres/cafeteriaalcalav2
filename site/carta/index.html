@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carta de Alcalà Cullera: desayunos, bocadillos, carnes y cócteles</title>
+<meta name="description" content="La carta de Alcalà Cafetería Baristas en Cullera: desayunos y almuerzo valenciano, bocadillos, hamburguesas, ensaladas, carnes, pescados, carta vegana y sin gluten, postres y cócteles. Con precios y alérgenos.">
+<link rel="canonical" href="https://alcalacullera.com/carta/">
+<meta name="theme-color" content="#4A0F1D">
+<link rel="icon" href="../media/favicon.png" type="image/png">
+<link rel="preload" href="../lib/fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../lib/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../lib/fonts/fuentes.css">
+<link rel="stylesheet" href="../css/base.css?v=2">
+<link rel="stylesheet" href="../css/carta.css?v=1">
+</head>
+<body class="carta-pag">
+
+<!-- iconos de los 14 alérgenos oficiales (UE 1169/2011) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="alg-gluten" viewBox="0 0 24 24"><path d="M12 22V9"/><path d="M12 9c-3 0-5-2-5-5 3 0 5 2 5 5zM12 9c3 0 5-2 5-5-3 0-5 2-5 5zM12 14c-3 0-5-2-5-5 3 0 5 2 5 5zM12 14c3 0 5-2 5-5-3 0-5 2-5 5zM12 19c-3 0-5-2-5-5 3 0 5 2 5 5zM12 19c3 0 5-2 5-5-3 0-5 2-5 5z"/></symbol>
+  <symbol id="alg-crustaceos" viewBox="0 0 24 24"><path d="M4 12c0-4 3-7 8-7s8 3 8 7-3 7-8 7-8-3-8-7z"/><path d="M4 12H2M20 12h2M7 8l-2-3M17 8l2-3M7 16l-2 3M17 16l2 3M9 11h.01M15 11h.01"/></symbol>
+  <symbol id="alg-huevos" viewBox="0 0 24 24"><path d="M12 3c3.5 0 7 5.5 7 10.5A7 7 0 0 1 5 13.5C5 8.5 8.5 3 12 3z"/></symbol>
+  <symbol id="alg-pescado" viewBox="0 0 24 24"><path d="M3 12c3-4 7-6 11-6 2 0 4 1 7 3-3 2-5 3-7 3-4 0-8-2-11 0z"/><path d="M3 12c3 4 7 6 11 6 2 0 4-1 7-3M21 9l-3 3 3 3M8 12h.01"/></symbol>
+  <symbol id="alg-cacahuetes" viewBox="0 0 24 24"><path d="M9 3a4 4 0 0 0-3 7 4 4 0 0 0 0 4 4 4 0 1 0 6 3 4 4 0 0 0 3-7 4 4 0 0 0 0-4A4 4 0 1 0 9 3z"/><path d="M9 8h.01M12 12h.01M15 16h.01"/></symbol>
+  <symbol id="alg-soja" viewBox="0 0 24 24"><path d="M12 22V12"/><path d="M12 12C8 12 5 9 5 5c4 0 7 3 7 7zM12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/><ellipse cx="12" cy="18" rx="3" ry="4"/></symbol>
+  <symbol id="alg-lacteos" viewBox="0 0 24 24"><path d="M8 2h8v4l2 4v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V10l2-4z"/><path d="M6 13h12"/></symbol>
+  <symbol id="alg-cascara" viewBox="0 0 24 24"><path d="M12 3c4 0 7 3.5 7 8.5S16 21 12 21s-7-4.5-7-9.5S8 3 12 3z"/><path d="M8 8c2.5-1 5.5-1 8 0"/></symbol>
+  <symbol id="alg-apio" viewBox="0 0 24 24"><path d="M9 22V10M15 22V10M12 22V8"/><path d="M9 10c-3-1-4-4-3-7 3 0 5 2 6 5M15 10c3-1 4-4 3-7-3 0-5 2-6 5"/></symbol>
+  <symbol id="alg-mostaza" viewBox="0 0 24 24"><path d="M8 7h8v13a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z"/><path d="M9 7V4h6v3M8 13h8"/></symbol>
+  <symbol id="alg-sesamo" viewBox="0 0 24 24"><ellipse cx="7" cy="8" rx="2" ry="3" transform="rotate(-30 7 8)"/><ellipse cx="15" cy="7" rx="2" ry="3" transform="rotate(20 15 7)"/><ellipse cx="10" cy="15" rx="2" ry="3" transform="rotate(10 10 15)"/><ellipse cx="17" cy="16" rx="2" ry="3" transform="rotate(-25 17 16)"/></symbol>
+  <symbol id="alg-sulfitos" viewBox="0 0 24 24"><path d="M7 3h10l-1 8a4 4 0 0 1-8 0z"/><path d="M12 15v6M8 21h8"/></symbol>
+  <symbol id="alg-altramuces" viewBox="0 0 24 24"><path d="M12 21V11"/><path d="M12 11c-4 0-6-3-6-7 4 0 6 3 6 7zM12 11c4 0 6-3 6-7-4 0-6 3-6 7z"/><path d="M8 21c0-3 2-5 4-5s4 2 4 5"/></symbol>
+  <symbol id="alg-moluscos" viewBox="0 0 24 24"><path d="M3 11a9 9 0 0 1 18 0c0 3-4 7-9 10C7 18 3 14 3 11z"/><path d="M12 21V8M7 17l5-9M17 17l-5-9"/></symbol>
+</svg>
+
+<header class="nav nav--fondo" id="nav">
+  <a class="nav__logo" href="../" aria-label="Alcalà · volver a la portada"><img src="../media/logo-blanco.webp" alt="Alcalà" width="600" height="600"></a>
+  <nav class="nav__links" aria-label="Principal">
+    <a href="../#presentacion">Nosotros</a>
+    <a href="../#redes">Redes</a>
+    <a href="../#visitanos">Visítanos</a>
+  </nav>
+  <div class="nav__der">
+    <div class="idiomas" data-idiomas>
+      <button class="idiomas__btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Cambiar idioma">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.8 3 2.8 16 0 19M12 2.5c-2.8 3-2.8 16 0 19"/></svg><span>ES</span>
+      </button>
+      <div class="idiomas__lista" role="menu">
+        <a href="./" hreflang="es" lang="es" aria-current="true"><b>ES</b> Español</a>
+        <a href="../va/carta/" hreflang="ca-ES" lang="ca-ES-valencia"><b>VA</b> Valencià</a>
+        <a href="../en/carta/" hreflang="en" lang="en"><b>EN</b> English</a>
+        <a href="../fr/carta/" hreflang="fr" lang="fr"><b>FR</b> Français</a>
+        <a href="../pl/carta/" hreflang="pl" lang="pl"><b>PL</b> Polski</a>
+        <a href="../ru/carta/" hreflang="ru" lang="ru"><b>RU</b> Русский</a>
+        <a href="../uk/carta/" hreflang="uk" lang="uk"><b>UK</b> Українська</a>
+      </div>
+    </div>
+    <a class="btn btn--lleno nav__cta" href="tel:+34961725098">Reservar</a>
+    <button class="nav__menu" id="menuBtn" aria-label="Abrir menú" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<header class="carta__cab">
+  <div class="caja">
+    <p class="ceja">Alcalà · Cafetería Baristas · Cullera</p>
+    <h1 class="titular">La carta.</h1>
+    <p class="grande">Cocina abierta todo el día: desayuna a la hora de cenar o cena a la hora de desayunar. Precios con IVA incluido.</p>
+    <div class="carta__sellos"><span>Carta vegana</span><span>Sin gluten</span><span>Carta en braille</span><span>Menú infantil</span></div>
+  </div>
+</header>
+
+<div class="tabs" id="tabsWrap">
+  <div class="caja tabs__in" id="tabs">
+    <label class="buscar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input type="search" id="buscar" placeholder="Buscar un plato…" aria-label="Buscar en la carta"></label>
+  </div>
+</div>
+
+<main id="cartaCont" aria-label="Carta"></main>
+
+<section class="leyenda" aria-labelledby="t-alg">
+  <div class="caja">
+    <h2 class="titular t-m" id="t-alg">Alérgenos</h2>
+    <ul id="leyendaLista"></ul>
+    <p>La información de alérgenos se elabora con los datos de los proveedores. Por los procesos de elaboración no podemos excluir la presencia de trazas de otros alérgenos. Si eres celíaco, díselo al camarero: los platos sin gluten salen identificados con una banderita.</p>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="caja">
+    <p class="titular t-l">Nos vemos en Alcalà.</p>
+    <div class="pie__cols">
+      <div class="pie__marca">
+        <a class="pie__logo" href="../" aria-label="Alcalà, portada"><img src="../media/logo-blanco.webp" alt="Alcalà" width="600" height="600" loading="lazy"></a>
+        <p>Carrer del Pintor Ferrer Cabrera, 3 · 46400 Cullera. Todos los días de 9:00 a 23:00, jueves cerrado.</p>
+      </div>
+      <nav aria-label="Visítanos"><h4>Visítanos</h4><a href="tel:+34961725098">961 72 50 98</a><a href="mailto:cafeteriaalcala@hotmail.es">Email</a><a href="https://www.google.com/maps/dir/?api=1&destination=39.16436,-0.24564" target="_blank" rel="noopener">Cómo llegar</a></nav>
+      <nav aria-label="Síguenos"><h4>Síguenos</h4><a href="https://instagram.com/cafeteriaalcala" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@cafeteriaalcala" target="_blank" rel="noopener">TikTok</a><a href="https://www.facebook.com/cafeteria.alcala/" target="_blank" rel="noopener">Facebook</a></nav>
+      <nav aria-label="Legal"><h4>Legal</h4><a href="../aviso-legal/">Aviso legal</a><a href="../privacidad/">Privacidad</a><a href="../cookies/">Cookies</a></nav>
+    </div>
+    <div class="pie__legal"><span>© <span id="yr">2026</span> Alcalà Cafetería · Baristas, Cullera.</span></div>
+  </div>
+</footer>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+  <button class="menu__cerrar" id="menuCerrar" aria-label="Cerrar menú">✕</button>
+  <a href="../">Inicio</a>
+  <a href="../#presentacion">Nosotros</a>
+  <a href="../#redes">Redes</a>
+  <a href="../#visitanos">Visítanos</a>
+  <a href="./" class="menu__carta">Carta</a>
+  <nav class="idiomas-fila" aria-label="Idioma">
+    <a href="./" aria-current="true">ES</a><a href="../va/carta/">VA</a><a href="../en/carta/">EN</a><a href="../fr/carta/">FR</a><a href="../pl/carta/">PL</a><a href="../ru/carta/">RU</a><a href="../uk/carta/">UK</a>
+  </nav>
+</div>
+
+<div class="flotante" aria-label="Contacto rápido">
+  <a href="tel:+34961725098" aria-label="Llamar al 961 72 50 98"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2.1z"/></svg></a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=39.16436,-0.24564" target="_blank" rel="noopener" aria-label="Cómo llegar"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></a>
+</div>
+
+<script src="../js/carta-datos.js?v=1"></script>
+<script src="../js/carta.js?v=1"></script>
+<script src="../lib/lenis.min.js" defer></script>
+<script src="../js/base.js?v=2" defer></script>
+<script>
+(function(){ var ul = document.getElementById('leyendaLista'); if(!ul) return;
+  ul.innerHTML = (window.ALERGENOS || []).map(function(a){ return '<li><span class="alg"><i><svg><use href="#alg-' + a.id + '"/></svg></i></span>' + a.n + '</li>'; }).join(''); })();
+</script>
+</body>
+</html>
