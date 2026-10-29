@@ -129,8 +129,7 @@ Vídeo del hero: `hero-loop.mp4` (7,4 MB) recomprimido con el ffmpeg de `imageio
 - **Telón**: logo por piezas (`media/logo-partes.svg`, generado desde `logo.svg`): letras una a una, raya, subtítulo y marco con zoom, 2,5 s, sólo la primera vez por sesión.
 - **Hero**: logo liso en SVG como máscara CSS; Three.js queda en `site/lib/three/` sin usar, por si se recupera el 3D (`js/hero-3d.js`).
 
-## 11. Ruta animada del mapa (29-10-2026, noche)
+## 11. Títulos y ruta (29-10-2026, noche)
 
-- «Visítanos» muestra un recorte del mapa de 1900 (`site/media/fotos/mapa-ruta.webp`, zona rotonda-Alcalà) con un SVG encima: una taza se vuelca en la rotonda de la Avinguda del País Valencià y el café recorre la avenida diagonal, la CV-503 y Blasco Ibáñez hasta la taza de Alcalà, con una gota en cabeza (CSS `offset-path`). Arranca al asomar la sección y se repite cada 9 s; con «reducir movimiento» se ve la ruta ya pintada.
-- La ruta está trazada a mano sobre las calles tal como las dibujó la IA (coordenadas del `path` en `index.html`, viewBox 1047x723). La ruta real calculada con OSRM (`herramientas` no la guarda; se recalcula con el punto 39.16475, -0.24512) sirvió de guía pero no encaja al píxel con el redibujo.
-- Títulos de sección: Fraunces 700 con tamaño óptico 72, igual que los nombres de categoría. (El bloque se había perdido al retirar el cursor; restaurado.)
+- Títulos de sección: Fraunces 700 con tamaño óptico 72, igual que los nombres de categoría (el bloque se había perdido al retirar el cursor; restaurado).
+- Se probó una ruta animada (taza que se vuelca y café circulando hasta Alcalà) y el cliente la descartó; el mapa vuelve a ser el plano completo con la taza y el halo.

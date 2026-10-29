@@ -20,7 +20,7 @@
 <link rel="preload" href="lib/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="lib/fonts/fuentes.css">
 <link rel="stylesheet" href="css/base.css?v=7">
-<link rel="stylesheet" href="css/portada.css?v=5">
+<link rel="stylesheet" href="css/portada.css?v=6">
 <link rel="preload" href="media/logo.svg" as="image">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -194,24 +194,12 @@
           </div>
         </div>
         <figure class="foto visita__mapa rv" style="--d:.15s">
-          <a class="mapa" id="mapa" href="https://www.google.com/maps/dir/?api=1&destination=Cafeter%C3%ADa+Alcal%C3%A1,+C.+del+Pintor+Ferrer+Cabrera,+3,+46400+Cullera" target="_blank" rel="noopener" aria-label="Mapa de 1900 con la ruta desde la rotonda de la Avinguda del País Valencià hasta Alcalà; abre cómo llegar en Google Maps">
+          <a class="mapa" href="https://www.google.com/maps/dir/?api=1&destination=Cafeter%C3%ADa+Alcal%C3%A1,+C.+del+Pintor+Ferrer+Cabrera,+3,+46400+Cullera" target="_blank" rel="noopener" aria-label="Mapa clásico de Cullera con la cafetería marcada; abre cómo llegar en Google Maps">
             <picture>
-              <source media="(max-width:640px)" srcset="media/fotos/mapa-ruta-movil.webp">
-              <img src="media/fotos/mapa-ruta.webp" alt="Plano de Cullera de estilo 1900: la taza de café en color marca Alcalà, en el barrio de San Antonio junto a la playa" width="1047" height="723" loading="lazy">
+              <source media="(max-width:640px)" srcset="media/fotos/mapa-clasico-movil.webp">
+              <img src="media/fotos/mapa-clasico.webp" alt="Plano de Cullera de estilo 1900 en blanco y negro: la taza de café en color marca Alcalà, en el barrio de San Antonio junto a la playa" width="1400" height="1045" loading="lazy">
             </picture>
-            <!-- ruta animada: una taza se vuelca en la rotonda y el café recorre las calles hasta Alcalà -->
-            <svg class="ruta" viewBox="0 0 1047 723" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <path class="ruta__sombra" d="M262 548 L285 520 L320 470 L360 410 L400 350 L432 305 L458 278 Q470 266 480 262 L505 250 Q518 246 530 244 L552 242"/>
-              <path class="ruta__cafe" id="rutaCafe" d="M262 548 L285 520 L320 470 L360 410 L400 350 L432 305 L458 278 Q470 266 480 262 L505 250 Q518 246 530 244 L552 242"/>
-              <circle class="ruta__gota" r="7" style="offset-path:path('M262 548 L285 520 L320 470 L360 410 L400 350 L432 305 L458 278 Q470 266 480 262 L505 250 Q518 246 530 244 L552 242')"/>
-              <g class="ruta__taza">
-                <ellipse class="taza__plato" cx="262" cy="562" rx="36" ry="12"/>
-                <path class="taza__asa" d="M288 532 q18 0 18 14 q0 14 -16 16"/>
-                <path class="taza__cuerpo" d="M236 526 h52 l-7 40 h-38 z"/>
-                <ellipse class="taza__borde" cx="262" cy="526" rx="26" ry="9"/>
-                <ellipse class="taza__cafe" cx="262" cy="526" rx="20" ry="6.5"/>
-              </g>
-            </svg>
+            <span class="mapa__halo" aria-hidden="true"></span>
             <span class="mapa__nota">Toca para abrir cómo llegar</span>
           </a>
         </figure>
@@ -292,6 +280,6 @@ window.CLIPS = [1,2,3,4,5,6,7,8,9].map(function(i){ return { video: 'media/reels
 <script src="js/hero.js?v=6" defer></script>
 <script src="lib/lenis.min.js" defer></script>
 <script src="js/base.js?v=3" defer></script>
-<script src="js/portada.js?v=3" defer></script>
+<script src="js/portada.js?v=4" defer></script>
 </body>
 </html>
