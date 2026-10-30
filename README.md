@@ -5,7 +5,6 @@ Nueva web de la Cafetería Alcalá de Cullera. Demo visual publicada en GitHub P
 - `site/` — la web (HTML, CSS y JS propios; Three.js, Lenis y Leaflet autoalojados en `site/lib/`).
 - `site/carta/` — carta con platos y precios (datos en `site/js/carta-datos.js`).
 - `site/administracion/` — panel de administración funcional en el navegador (sin login ni servidor todavía).
-- `site/administracion/` — maqueta visual del panel de administración (sin funcionalidad todavía).
 - `imagenes/` — material de origen (fotos, logo, vídeo del hero, texturas).
 - `herramientas/` — scripts para vectorizar el logo y generar el modelo 3D.
 - `referencia-velvetcullera.md`, `estilo-visual.md`, `arquitectura.md` — documentación del proyecto.
