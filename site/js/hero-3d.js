@@ -1,4 +1,4 @@
-/* Alcalà — hero.js: logo en 3D de oro viejo sobre la pared de azulejo.
+/* Alcalá — hero.js: logo en 3D de oro viejo sobre la pared de azulejo.
    Three.js (módulos ES por importmap) · GLTFLoader + meshopt · estudio de luz procedural (sin HDRI).
    Fijo de frente con un vaivén muy leve; gira al arrastrar y vuelve solo. Si no hay WebGL o falla el
    GLB, se enseña el logo en imagen. También pone el vídeo de fondo cuando la pantalla es ancha. */

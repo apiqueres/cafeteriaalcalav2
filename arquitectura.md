@@ -1,4 +1,4 @@
-# Alcalà Cafetería · Baristas — estructura de la web y arquitectura
+# Alcalá Cafetería · Baristas — estructura de la web y arquitectura
 
 Decidido el 29-10-2026 con el brief del cliente. Complementa `estilo-visual.md` y `referencia-velvetcullera.md`.
 
@@ -132,4 +132,4 @@ Vídeo del hero: `hero-loop.mp4` (7,4 MB) recomprimido con el ffmpeg de `imageio
 ## 11. Títulos y ruta (29-10-2026, noche)
 
 - Títulos de sección: Fraunces 700 con tamaño óptico 72, igual que los nombres de categoría (el bloque se había perdido al retirar el cursor; restaurado).
-- Se probó una ruta animada (taza que se vuelca y café circulando hasta Alcalà) y el cliente la descartó; el mapa vuelve a ser el plano completo con la taza y el halo.
+- Se probó una ruta animada (taza que se vuelca y café circulando hasta Alcalá) y el cliente la descartó; el mapa vuelve a ser el plano completo con la taza y el halo.

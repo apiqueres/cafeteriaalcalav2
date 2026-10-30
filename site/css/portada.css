@@ -1,4 +1,4 @@
-/* Alcalà — portada.css: lo propio de cada lámina de la portada */
+/* Alcalá — portada.css: lo propio de cada lámina de la portada */
 
 /* ---------- presentación ---------- */
 .presenta .cuerpo{ grid-template-columns:1.05fr .95fr; gap:clamp(2rem,5vw,6rem) }

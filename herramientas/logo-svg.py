@@ -1,4 +1,4 @@
-# Alcalà — vectoriza el logo (webp con transparencia) a SVG con potrace.
+# Alcalá — vectoriza el logo (webp con transparencia) a SVG con potrace.
 # Uso: python herramientas/logo-svg.py imagenes/logo-blanco.webp herramientas/logo.svg
 import sys, os
 from PIL import Image

@@ -1,4 +1,4 @@
-// Alcalà — extruye el logo (SVG) con Three.js en Node y exporta un GLB sin materiales.
+// Alcalá — extruye el logo (SVG) con Three.js en Node y exporta un GLB sin materiales.
 // Respeta los agujeros del SVG (fill-rule evenodd), cosa que el relleno de curvas de Blender no hacía bien aquí.
 // Uso:  node herramientas/logo-glb.mjs herramientas/logo.svg herramientas/logo-raw.glb
 import fs from 'node:fs';

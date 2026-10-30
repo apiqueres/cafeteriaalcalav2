@@ -1,4 +1,4 @@
-/* Alcalà — datos de la carta para la maqueta.
+/* Alcalá — datos de la carta para la maqueta.
    Platos y precios sacados de las cartas en PDF de cafeteriaalcala.es (septiembre de 2026).
    Los ALÉRGENOS son de ejemplo: los tiene que validar cocina antes de publicar.
    Cuando exista el panel, este fichero lo generará el servidor desde la base de datos. */

@@ -1,4 +1,4 @@
-/* Alcalà — admin.css: panel de administración (maqueta visual) */
+/* Alcalá — admin.css: panel de administración (maqueta visual) */
 body.admin{ background:var(--hueso); color:var(--carbon); font-size:.95rem; min-height:100svh; display:grid; grid-template-columns:240px 1fr; grid-template-rows:auto 1fr }
 .ad-top{ grid-column:1 / -1; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.7rem var(--lado); background:var(--burdeos-2); color:var(--hueso); position:sticky; top:0; z-index:20 }
 .ad-top__marca{ display:flex; align-items:center; gap:.7rem; font-family:var(--ff-ui); text-transform:uppercase; letter-spacing:.12em; font-size:.85rem }

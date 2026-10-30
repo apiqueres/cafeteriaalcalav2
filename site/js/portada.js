@@ -1,4 +1,4 @@
-/* Alcalà — portada.js: carrusel de clips de redes.
+/* Alcalá — portada.js: carrusel de clips de redes.
    Los clips salen de window.CLIPS (los pondrá el servidor desde el panel); mientras no haya vídeo,
    se enseña el póster. El mp4 sólo se asigna cuando el carrusel entra en pantalla. */
 (function(){

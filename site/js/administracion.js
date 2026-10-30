@@ -1,4 +1,4 @@
-/* Alcalà — administracion.js: panel de administración funcional en el navegador.
+/* Alcalá — administracion.js: panel de administración funcional en el navegador.
    Sin servidor todavía: los datos se guardan en localStorage (clave «alcala.datos») y la carta
    pública los lee. Cuando exista el servidor, estas mismas funciones llamarán a la API. */
 (function(){

@@ -1,4 +1,4 @@
-# Alcalà Cafetería · Baristas — propuesta de estilo visual
+# Alcalá Cafetería · Baristas — propuesta de estilo visual
 
 Propuesta del 29-10-2026 a partir del material de `imagenes/` y de la referencia de Velvet Cullera.
 

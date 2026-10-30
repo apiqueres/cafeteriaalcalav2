@@ -1,4 +1,4 @@
-# Alcalà Cafetería · Baristas — web v2
+# Alcalá Cafetería · Baristas — web v2
 
 Nueva web de la Cafetería Alcalá de Cullera. Demo visual publicada en GitHub Pages desde la carpeta `site/`.
 

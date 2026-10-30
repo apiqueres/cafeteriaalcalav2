@@ -1,4 +1,4 @@
-/* Alcalà — carta.css: página de la carta */
+/* Alcalá — carta.css: página de la carta */
 body.carta-pag{ background:var(--hueso); color:var(--carbon) }
 body.carta-pag::before{ content:""; position:fixed; inset:0; z-index:-1; background:url(../media/texturas/papel.webp) center/560px; opacity:.4; mix-blend-mode:multiply; pointer-events:none }
 

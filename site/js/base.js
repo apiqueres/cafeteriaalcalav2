@@ -1,4 +1,4 @@
-/* Alcalà Cafetería · Baristas — base.js
+/* Alcalá Cafetería · Baristas — base.js
    Lo común de todas las páginas: telón de entrada, titulares palabra a palabra, scroll suave (Lenis),
    láminas apiladas con --entra / --cubre, snap suave en escritorio, entradas al asomar,
    barra de arriba, menú de móvil, selector de idioma, cintas y año del pie. */

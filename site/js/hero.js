@@ -1,4 +1,4 @@
-/* Alcalà — hero.js: vídeo de fondo de la pared de azulejo.
+/* Alcalá — hero.js: vídeo de fondo de la pared de azulejo.
    Sólo en pantallas anchas, sin ahorro de datos y sin «reducir movimiento»; en móvil queda la foto.
    (La versión con el logo en 3D está guardada en hero-3d.js por si se vuelve a querer.) */
 (function(){

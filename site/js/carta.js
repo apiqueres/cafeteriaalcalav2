@@ -1,4 +1,4 @@
-/* Alcalà — carta.js: pinta la carta desde window.CARTA, pestañas pegajosas y buscador */
+/* Alcalá — carta.js: pinta la carta desde window.CARTA, pestañas pegajosas y buscador */
 (function(){
   var CARTA = window.CARTA || [], ALG = window.ALERGENOS || [], ETQ = window.ETIQUETAS || {};
   /* si el panel (/administracion) ha guardado datos en este navegador, la carta los usa */
