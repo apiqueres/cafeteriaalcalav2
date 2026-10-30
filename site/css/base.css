@@ -298,7 +298,7 @@ p b{ font-weight:700 }
   .pie__cols{ grid-template-columns:1fr }
   /* móvil: el logo se dimensiona también por la ALTURA de la pantalla para que nunca pise el texto de abajo */
   .hero__logo{ width:min(62vw,300px); top:36% }
-  .hero__logo--liso{ width:min(74vw,34svh,340px); top:31% }
+  .hero__logo--liso{ width:min(86vw,41svh,400px); top:29% }
   .hero__texto{ bottom:4.6rem; gap:.8rem; padding-right:calc(var(--lado) + 3.4rem); padding-left:calc(var(--lado) + 3.4rem) }
   .hero__h1{ font-size:.74rem; letter-spacing:.16em }
   .hero__h1 b{ font-size:clamp(1.25rem,5.2vw,1.6rem); margin-top:.25rem }
@@ -328,7 +328,7 @@ p b{ font-weight:700 }
 .pal{ padding-bottom:.12em; margin-bottom:-.12em }
 
 @media (max-width:640px) and (max-height:620px){
-  .hero__logo--liso{ width:min(60vw,30svh); top:27% }
+  .hero__logo--liso{ width:min(72vw,35svh); top:26% }
   .hero__texto{ bottom:3.4rem; gap:.6rem }
   .hero__h1 b{ font-size:1.15rem }
 }
